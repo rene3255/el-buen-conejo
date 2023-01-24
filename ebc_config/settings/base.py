@@ -20,9 +20,13 @@ DJANGO_APPS = [
     'django.contrib.staticfiles',
     'django_extensions',
 ]
-EL_BUEN_CONEJO_APPS = []
+EL_BUEN_CONEJO_APPS = ['homepage',]
 
-INSTALLED_APPS = DJANGO_APPS + EL_BUEN_CONEJO_APPS 
+THIRD_PARTY_APPS = ['cloudinary',]
+
+INSTALLED_APPS = DJANGO_APPS \
+                + EL_BUEN_CONEJO_APPS \
+                + THIRD_PARTY_APPS 
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -101,9 +105,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = '/static/'
-MEDIA_URL = '/ebc_images/'
+MEDIA_URL = '/elbuenconejo_images/'
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
-MEDIA_ROOT = os.path.join(BASE_DIR, 'ebc_images')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'elbuenconejo_images')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 

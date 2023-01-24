@@ -1,4 +1,10 @@
 from .base import *
+from pathlib import Path
+import environ
+import os
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 env = environ.Env()
 environ.Env.read_env()
@@ -16,7 +22,12 @@ ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': str(os.environ.get('DB_NAME')),
+        'USER': str(os.environ.get('DB_USER')),
+        'PASSWORD': str(os.environ.get('DB_PASSWORD')),
+        'HOST':str(os.environ.get('DB_HOST')),
+        'PORT':os.environ.get('DB_PORT'),
     }
 }
+
