@@ -1,0 +1,22 @@
+.home-art{
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+
+}
+.slider{
+    display: flex;
+    width: 80%;
+    margin: auto;
+    overflow-x: auto;
+    gap: 10px;
+}
+.infocar__slider{
+    display: inline-block;
+    height: 250px;
+    width: 250px;
+}
+.infocar__title{
+    width: 250px;
+}
