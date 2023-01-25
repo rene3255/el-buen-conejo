@@ -1,6 +1,7 @@
 run:
+		python3 manage.py collectstatic --noinput --clear
 		python3 manage.py runserver
-
+		
 mig:
 		python3 manage.py makemigrations
 
