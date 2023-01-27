@@ -28,7 +28,7 @@ export function validate_Email(value) {
 
 export function validate_password_register(value){
     return {
-        'leter':/[A-z]/.test(value),
+        'lower':/[A-z]/.test(value),
         'upper':/[A-Z]/.test(value),
         'number':/\d/.test(value)
     }  

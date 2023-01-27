@@ -2,7 +2,8 @@ import {
     Eye_password,
     valitate_string,
     validate_Email,
-    validate_password
+    validate_password,
+    validate_password_register
 } from "./Tools.js";
 
 const d=document;
@@ -23,4 +24,17 @@ d.addEventListener('DOMContentLoaded',(e)=>{
         console.log("se cargo");
     }
     Eye_password();
+
+    const input_password=document.querySelector('#password');
+    if(input_password){
+        input_password.oninput = function() {
+            let aux=validate_password_register(input_password.value);
+            for(let key in aux){
+                let link=document.getElementById("password-"+key)
+                //console.log(document.getElementById("password-"+key),"password-"+key);
+                link.style.color=(aux[key])?"#38A169":"#E53E3E";
+            }
+        }
+    }
+
 })
