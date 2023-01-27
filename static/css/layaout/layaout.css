@@ -37,7 +37,8 @@
     --white-one:#D9D9D9;
     --doe: #91529E;
     --buck: #407C7A;
-    
+    --gray: #777777;
+
     /* states */ 
     --danger-100: #E53E3E;
     --success-100: #38A169;
@@ -122,6 +123,17 @@
         background: url(./../../img/icons/icons/Logo.svg);
         background-repeat: no-repeat;
         background-size: cover;
+    }
+    .link__a{
+        text-decoration: none;
+        color:var(--primary-600);
+        font-size: 14px;
+    }
+    .link__a:hover{
+      text-decoration: underline;
+    }
+    .link__a-without-css{
+        text-decoration: none;
     }
     .footer{
         width: 100%;
