@@ -20,7 +20,7 @@ DJANGO_APPS = [
     'django.contrib.staticfiles',
     'django_extensions',
 ]
-EL_BUEN_CONEJO_APPS = ['homepage',]
+EL_BUEN_CONEJO_APPS = ['homepage', 'users_control',]
 
 THIRD_PARTY_APPS = ['cloudinary',]
 
