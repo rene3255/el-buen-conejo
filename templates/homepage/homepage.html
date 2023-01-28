@@ -4,7 +4,97 @@
 {% block content %}
 {% include 'layouts/header.html' %}
 <main>
-
+    <article class="home-art">
+      <div class="home-art__title">
+        <h3>La herramienta para controlar su granja</h3>
+        <p>Lleva un registro completo de tus conejos y gestiona tu granja de manera eficiente.</p>
+      </div>
+        <button class="btn btn-lg btn-secundary-solid">Únete a El buen conejo</button>
+        <div class="slider">
+            <div class="infocar__slider">
+                <img src={% static 'gif/camera.gif' %}  width="50" height="50"  alt="" srcset="">
+                <div>
+                    <h6 class="infocar__title" >Comunidad</h6>
+                    <p>Conecta con otros productores, comparte tus experiencias y aprende de los demás</p>
+                </div>
+                <a class="link-social-media" href="#">
+                  Ver comunidad <div class="icon-carrets"></div>
+                </a>
+            </div>
+            <div class="infocar__slider">
+                    <img src={% static 'gif/bag.gif' %}  width="50" height="50"  alt="" srcset="">
+                    <div>
+                        <h6 class="infocar__title">Comunidad</h6>
+                        <p>Conecta con otros productores, comparte tus experiencias y aprende de los demás</p>
+                    </div>
+                    <a class="link-social-media" href="#">
+                      Ver comunidad <div class="icon-carrets"></div>
+                    </a>
+            </div>
+            <div class="infocar__slider">
+                    <img src={% static 'gif/calender.gif' %}  width="50" height="50"  alt="" srcset="">
+                    <div>
+                        <h6 class="infocar__title">Eventos</h6>
+                        <p>Mantente al tanto de los eventos importantes para productores, como ferias, conferencias y más.</p>
+                    </div>
+                    <a class="link-social-media" href="#">
+                      Ver comunidad <div class="icon-carrets"></div>
+                    </a>
+            </div>
+        </div>
+    </article>
+    <article class="allies-art">
+      <div>
+        <h4>
+            El aliado perfecto para el cuidado de tus conejos
+          </h4>
+          <p>
+            El buen conejo es una solución práctica para agricultores, granjeros y familias
+          </p>
+      </div>
+      <div>
+        <div>
+            <div class="icons__calender-color"></div>
+            <h5>Ahorrar tiempo</h5>
+            <p>Solo tienes que concentrarte en lo que mejor sabes hacer y El buen conejo hace el resto</p>
+        </div>
+        <div>
+            <div class="icons__mesh"></div>
+            <h5>Ahorrar tiempo</h5>
+            <p>Solo tienes que concentrarte en lo que mejor sabes hacer y El buen conejo hace el resto</p>
+        </div>
+        <div>
+            <div class="icons__bar"></div>
+            <h5>Ahorrar tiempo</h5>
+            <p>Solo tienes que concentrarte en lo que mejor sabes hacer y El buen conejo hace el resto</p>
+        </div>
+      </div>
+    </article>
+    <article class="product-art">
+      <h4>Comienza a ser productor</h2>
+      <div class="product-art__item">
+        <div class="product-art__title">
+            <div class="img-number__one"></div>
+            <h5>Crea tu cuenta</h5>
+        </div>
+          <p>Necesitas registrarte como productor para automatizar la gestión de tu granja</p>
+      </div>
+      <div class="product-art__item">
+        <div class="product-art__title" >
+            <div class="img-number__two"></div>
+            <h5>Crea tu cuenta</h5>
+        </div>
+          <p>Necesitas registrarte como productor para automatizar la gestión de tu granja</p>
+      </div>
+      <div class="product-art__item">
+        <div class="product-art__title">
+            <div class="img-number__three"></div>
+            <h5>Crea tu cuenta</h5>
+        </div>
+          <p>Necesitas registrarte como productor para automatizar la gestión de tu granja</p>
+      </div>
+      <button  class="btn btn-md btn-secundary-solid">Abre tu cuenta ahora</button>
+    </article>
 </main>
 {% include 'layouts/footer.html' %}
 {% endblock %}

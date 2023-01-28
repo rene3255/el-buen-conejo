@@ -1,0 +1,120 @@
+.home-art{
+  width: 100%;
+  display: grid;
+  place-items: center;
+  padding: 10px;
+  background-color: var(--primary-50);
+  gap: 10px;
+}
+.home-art__title{
+    display: grid;
+    gap: 10px;
+}
+.home-art__title h3{
+    margin-bottom: 0px;
+    text-align: center;
+}
+.home-art__title p{
+    margin-top: 0px;
+    font-size: 16px;
+    text-overflow: initial;
+    line-height: 120%;
+    font-weight: 400;
+    text-align: center;
+}
+
+.slider{
+    display: flex;
+    width: 90%;
+    margin: auto;
+    overflow-x: auto;
+    gap: 10px;
+}
+.infocar__slider{
+    display: inline-block;
+    background-color: var( --background);
+    padding: 10px;
+    border: 1px solid #D9D9D9;
+    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+}
+.infocar__slider img{
+ width: 5rem;
+ height: 5rem;
+}
+.infocar__slider h6{
+  margin: 0px;
+}
+.infocar__title{
+    width: 250px;
+}
+h4{
+    text-align: center;
+}
+.allies-art,
+.product-art{
+padding: 10px;
+display: grid;
+gap: 10px;
+}
+.product-art__title{
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+.product-art__item{
+    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.12);
+    border-radius: 8px;
+    padding: 10px;
+}
+.icons__calender-color,
+.icons__mesh,
+.icons__bar{
+  width: 56px;
+  height: 56px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.icons__calender-color{
+  background: url(./../../img/icons/home/calender-color.svg);
+}
+.icons__mesh{
+    background: url(./../../img/icons/home/mesh.svg);
+}
+.icons__bar{
+    background: url(./../../img/icons/home/bar.svg);
+}
+.img-number__one,
+.img-number__two,
+.img-number__three{
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    scale: 0.7;
+}
+.img-number__one{
+    background: url(./../../img/icons/home/Badge_1.svg);
+}
+.img-number__two{
+    background: url(./../../img/icons/home/Badge_2.svg);
+}
+.img-number__three{
+    background: url(./../../img/icons/home/Badge_3.svg);
+}
+.icon-carrets{
+    width: 14px;
+    height: 14px;
+    background: url(./../../img/icons/icons/general/Carrets.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.link-social-media{
+    display: flex;
+    text-decoration: none;
+    color:var(--primary-600);
+    align-items: center;
+    justify-content: left;
+    gap: 5px;
+    font-weight: 700;
+}

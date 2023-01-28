@@ -1,3 +1,5 @@
 @import url(./layaout/layaout.css);
 @import url(./components/components.css);
 @import url(./homepage/homepage.css);
+@import url(./Login/Login.css);
+@import url(./Register/Register.css);
