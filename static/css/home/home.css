@@ -70,3 +70,45 @@
 .container-home-rabbit img{
     width: 99%;
 }
+.container-user-not-img{
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    background-color: var(--notUser);
+    display: grid;
+    place-items: center;
+}
+.user_not_img{
+    height: 22px;
+    width: 22px;
+    background: url(./../../img/icons/home/user_not_img.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+}
+.container-image-user{
+    display: flex;
+    justify-content: center;
+}
+.button-input-user-setting{
+    background:none;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    display: grid;
+    place-items: center;
+    height: 32px;
+    width: 32px;
+}
+.input-user-setting{
+    height: 16px;
+    width: 16px;
+    background: url(./../../img/icons/icons/eyes/Arrow=CaretDown.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.input-user-setting-active{
+    background: url(./../../img/icons/icons/eyes/Arrow=CaretUp.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
