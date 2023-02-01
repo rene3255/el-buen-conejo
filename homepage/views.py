@@ -25,4 +25,11 @@ def home(request):
         'path_rute':'home'
     }
     return render(request,'home/home.html',context)     
+
+def details(request):
+    context = {
+        'elbuenconejo': 'Hello from hompage view',
+        'path_rute':'details'
+    }
+    return render(request,'MarketDetails/MarketDetails.html',context)   
   

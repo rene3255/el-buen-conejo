@@ -1,6 +1,8 @@
 <header>
     {% if path_rute == "home" %}
         {% include 'components/NavbarAut.html' %}
+    {% elif path_rute == "details" %}
+        {% include 'components/NavbarDetails.html' %}
     {% else %}
         {% include 'components/Navbar.html' %}
     {% endif%}

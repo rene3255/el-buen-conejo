@@ -69,7 +69,13 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
-
+.menu-mobile__icon-arrow-letf{
+    height: 32px;
+    width: 32px;
+    background: url(./../../img/icons/icons/general/ArrowLeft.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .container-menu-user{
     display: flex;
     gap: 5px;

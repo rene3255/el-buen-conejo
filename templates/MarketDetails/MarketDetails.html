@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% include 'layouts/header.html' with path_rute="details" %}
+<main>
+    <article class="full-rabbit">
+        <div class="container-detail-rabbit">
+            <figure>
+                <img src={% static 'img/slide-home/raza3.png' %}  alt="">
+                <figcaption>
+                    <ul>
+                        <li>Titulo</li>
+                        <li>$000</li>
+                        <li class="flex"><span class="icon-geo"></span> {Ubicacion}</li>
+                    </ul>
+                </figcaption>
+            </figure>
+        </div>
+    </article>
+    <article class="details-rabbit">
+        <div>
+            <h6>Datos del conejo:</h6>
+            <table>
+                <!--
+                    <tr> <th colspan="2"><h6>Datos del conejo:</h6> </th> <th></th></tr>
+                --> 
+                <tr>
+                    <th class="th-one">Estado</th>
+                    <th>Vivo</th>
+                </tr>
+                <tr>
+                    <th class="th-two">Peso</th>
+                    <th>8Kg</th>
+                </tr>
+                <tr>
+                    <th class="th-one" >Raza</th>
+                    <th>California</th>
+                </tr>
+                <tr>
+                    <th class="th-two">Edad</th>
+                    <th>4meses</th>
+                </tr>
+                <tr>
+                    <th class="th-one">Color</th>
+                    <th>Blanco</th>
+                </tr>
+                <tr>
+                    <th class="th-two">Genotipo</th>
+                    <th>-</th>
+                </tr>
+                <tr>
+                    <th class="th-one">Crías vivas</th>
+                    <th>4</th>
+                </tr>
+                <tr>
+                    <th class="th-two">Total de crías</th>
+                    <th>14</th>
+                </tr>
+            </table>
+        </div>
+    </article>
+    <article class="details-productor"></article>
+    <article class="slider-rabbit"></article>
+</main>
+{% include 'layouts/footer.html' %}
+{% endblock %}
