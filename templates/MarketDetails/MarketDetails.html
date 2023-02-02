@@ -59,8 +59,122 @@
             </table>
         </div>
     </article>
-    <article class="details-productor"></article>
-    <article class="slider-rabbit"></article>
+    <article class="details-productor">
+        <h5>Productor:</h5>
+        <div class="details-productor__header">
+            <!-- <img src="" alt=""> -->
+            <div class="ejemplo-img"></div>
+            <h5 >John Doe</h5>
+            <button class="btn btn-lg btn-secundary-border-white">Ver perfil</button>
+        </div>
+        <div>
+            <div class="card-detail-rabbit">
+                <div class="card-detail-rabbit__cast">
+                    <h4 class="card-detail-rabbit__title-cost">$999</h4>
+                </div>
+                <div class="card-detail-rabbit__inf">
+                    <div class="inf-card-item-detail">
+                        <h6>Macho</h6>
+                        <span>Sexo</span>
+                    </div>
+                    <div class="inf-card-item-detail">
+                        <h6>0 kg</h6>
+                        <span>Peso</span>
+                    </div>
+                    <div class="inf-card-item-detail">
+                        <h6>8 meses</h6>
+                        <span>Edad</span>
+                    </div>
+                </div>
+                <div class="card-detail-rabbit__btn ">
+                    <button class="btn btn-ls btn-secundary-solid">Contactar al productor</button>
+                </div>
+            </div>
+        </div>
+    </article>
+    <article class="slider-rabbit container-home-slider-rabbit-breeds container-detail-rabbit">
+            <div class="container-slider__title">
+              <h6>Buscar por razas</h6>
+              <div> 
+                  <button class="btn btn-primary-border-white btn-xs"><<</button>
+                  <button class="btn btn-primary-border-white btn-xs">>></button>
+              </div>
+            </div>
+            <div class="slider slider-detail">
+              <ul class="slides">
+                 <li class="slide" id="slide1">
+                    <a href="makeDetails">
+                        <figure>
+                            <img src={% static 'img/slide-home/raza3.png' %}  alt="">
+                            <figcaption>
+                                <ul>
+                                    <li>Titulo</li>
+                                    <li>$000</li>
+                                    <li class="flex"><div class="icon-geo"></div> {Ubicacion}</li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                    </a>
+                 </li>
+                 <li class="slide" id="slide2">
+                    <a href="makeDetails">
+                        <figure>
+                            <img src={% static 'img/slide-home/raza3.png' %}  alt="">
+                            <figcaption>
+                                <ul>
+                                    <li>Titulo</li>
+                                    <li>$000</li>
+                                    <li class="flex"><div class="icon-geo"></div> {Ubicacion}</li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                    </a>
+                 </li>
+                 <li class="slide" id="slide3">
+                    <a href="makeDetails">
+                        <figure>
+                            <img src={% static 'img/slide-home/raza3.png' %}  alt="">
+                            <figcaption>
+                                <ul>
+                                    <li>Titulo</li>
+                                    <li>$000</li>
+                                    <li class="flex"><div class="icon-geo"></div> {Ubicacion}</li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                    </a>
+                 </li>
+                 <li class="slide" id="slide4">
+                    <a href="makeDetails">
+                        <figure>
+                            <img src={% static 'img/slide-home/raza3.png' %}  alt="">
+                            <figcaption>
+                                <ul>
+                                    <li>Titulo</li>
+                                    <li>$000</li>
+                                    <li class="flex"><div class="icon-geo"></div> {Ubicacion}</li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                    </a>
+                 </li>
+                 <li class="slide" id="slide5">
+                    <a href="makeDetails">
+                        <figure>
+                            <img src={% static 'img/slide-home/raza3.png' %}  alt="">
+                            <figcaption>
+                                <ul>
+                                    <li>Titulo</li>
+                                    <li>$000</li>
+                                    <li class="flex"><div class="icon-geo"></div> {Ubicacion}</li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                    </a>
+                 </li>
+              </ul>
+            </div>
+    </article>
 </main>
 {% include 'layouts/footer.html' %}
 {% endblock %}
