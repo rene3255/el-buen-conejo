@@ -7,6 +7,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('homepage.urls')),
     path('users_control/', include('users_control.urls')),
-    
+    #path('resources/', include('resources.urls'))
     
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

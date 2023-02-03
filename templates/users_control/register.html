@@ -1,0 +1,51 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% include 'layouts/header.html' %}
+
+
+<main>
+    <form method="post">
+      {% csrf_token %}
+      {% for field in form %}
+        {{ field.label_tag }}
+        {{ field }}
+        {% if field.errors %}
+           {{ field.errors }}
+        {% endif %}
+      {% endfor %}
+      <div class="">
+        <button type="submit"  class="">Registrarme</button>
+      </div>  
+      
+    </form>
+    
+    <div class="">
+      <a class="" href={% url 'home' %}>Volver</a>
+    </div> 
+    
+        <!--
+          <div class="form-register__header">
+           <h4>Comienza a ser productor</h4>
+           <span>Primero, crea tu cuenta en El buen conejo</span> <br>
+           <span>¿Ya tienes cuenta?<a class="link__a" href="Register">Iniciá sesión</a></span>
+        </div>
+        <div class="form-register__name-last-name">
+            <div class="form-register__input">
+                <label for={{ field.label_tag }}> </label>
+                   <h6>{{ field }} </h6>
+                    {% if field.errors %}
+                      {{ field.errors }}
+                    {% endif %}
+               
+                <input type="text" name="name" id="name" placeholder="Nombre" required>
+             </div>
+             
+        </div>
+        -->
+        
+     <script src="{% static 'js/form/form_register.js' %}" type="module" ></script>  
+</main>
+{% include 'layouts/footer.html' %}
+{% endblock %}

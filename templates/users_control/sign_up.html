@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% include 'layouts/header.html' %}
+
+      <form method="post">    
+        {% csrf_token %}
+        {% for field in form %}
+        <div class="row form-group p-2 form-control-lg" >
+          {{ field.label_tag }}
+          {{ field }}  
+          {% if field.errors %}
+          {{ field.errors }}
+          {% endif %}
+        </div>
+        {% endfor %}
+        <div class="">
+          <button type="submit"  class="">Registrarme</button>
+        </div>
+	      <div class="">
+          <a class="" href={% url 'home' %}>Volver</a>
+        </div>
+      </form>

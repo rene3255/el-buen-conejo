@@ -19,12 +19,12 @@
         </li>
     </ul>
     <div class="button-login">
-        <a href="login" class="link__a-without-css">
+        <a href="{% url 'users_control:login' %}" class="link__a-without-css">
             <button class="btn btn-xs btn-primary-none">
                 Iniciar sesión
             </button>
         </a>
-        <a href="register" class="link__a-without-css">
+        <a href="{% url 'users_control:register' %}" class="link__a-without-css">
             <button class="btn btn-sm btn-primary-solid">
                 Crear cuenta
             </button>

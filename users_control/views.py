@@ -1,15 +1,17 @@
+
 from django.shortcuts import render
 from wsgiref.util import request_uri
 from django.shortcuts import render,redirect
 from django.contrib.auth import authenticate,logout,login
-from django.contrib.auth.models import User
+from users_control.models import CustomUser
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordChangeForm
 from django.contrib.auth.views import PasswordChangeView
 from django.contrib import  messages
 from django.urls import reverse_lazy
-from .forms import RegisterForm, PwdChangingForm, ProfileForm, UsrChangeFrm
+from .forms import RegisterForm, LoginForm
 from django.views import generic
-from users_control.models import Profile
+from django.contrib.auth import views as auth_views
+
 
 # Create your views here.
 
@@ -26,6 +28,23 @@ def register(request):
             return redirect('home')
            
 
-    return render(request,'register.html',{
+    return render(request,'users_control/register.html',{
         'form' : form,
     })
+
+
+class LoginView(auth_views.LoginView):
+    template_name = 'users_control/login.html'
+    form_class = LoginForm
+    
+
+def elbuenconejo_logout(request):
+    if not request.user.is_authenticated:
+        
+        return redirect('home')
+    else: 
+        print("Usuario", request.user.username)
+        logout(request)
+        messages.success(request,'Salió de sesión exitosamente')
+        return redirect('home')
+          

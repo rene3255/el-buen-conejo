@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% include 'layouts/header.html' %}
+
+<h1>Login</h1>
+
+<form  method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" id="submit">Login</button>
+</form>
+{% include 'layouts/footer.html' %}
+{% endblock %}
