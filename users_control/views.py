@@ -16,9 +16,15 @@ from django.contrib.auth import views as auth_views
 # Create your views here.
 
 def register(request):
+    if request.method == 'GET':
+        form=RegisterForm()
+        return render(request,'Register/Register.html',{
+            'form' : form,'error':''
+        })
     if request.user.is_authenticated:
         return redirect('home')
-    form = LoginForm(request.POST or None)
+
+    form = RegisterForm( data=request.POST)
     if request.method == 'POST' and form.is_valid():
 
         user = form.save()
@@ -26,11 +32,11 @@ def register(request):
             login(request,user)
             messages.success(request,'Cuenta creada exitosamente')
             return redirect('home')
-           
-
-    return render(request,'users_control/register.html',{
-        'form' : form,
-    })
+    else:
+        form=RegisterForm()
+        return render(request,'Register/Register.html',{
+            'form' : form,'error':'datos incorrectos'
+        })      
 
 def elbuenconejo_login(request):
     if request.method == 'GET':

@@ -10,12 +10,10 @@ class RegisterForm(forms.Form):
                                 min_length=4, max_length=50,
                                 widget=forms.TextInput(attrs={
                                     'id' : 'username',
-                                    'placeholder' : 'Username'
                                 }))
     email = forms.EmailField(label='Correo electrónico', required=True,
                             widget=forms.EmailInput(attrs={
                                 'id' : 'email',
-                                'placeholder' : 'example@gmail.com'
         }))
     
     password = forms.CharField(label='Password', required=True,
