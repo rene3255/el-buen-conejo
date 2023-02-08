@@ -18,7 +18,7 @@ from django.contrib.auth import views as auth_views
 def register(request):
     if request.user.is_authenticated:
         return redirect('home')
-    form = RegisterForm(request.POST or None)
+    form = LoginForm(request.POST or None)
     if request.method == 'POST' and form.is_valid():
 
         user = form.save()
@@ -32,13 +32,37 @@ def register(request):
         'form' : form,
     })
 
-
+def elbuenconejo_login(request):
+    if request.method == 'GET':
+        form = LoginForm()
+        return render(request,'Login/Login.html',{
+            'form' : form,'error':''
+        })
+    form = LoginForm(request=request, data=request.POST)
+    
+    if request.method == 'POST' and form.is_valid():
+        user = authenticate(username=request.POST['username'], password=request.POST['password'])
+        if user is not None:
+           login(request,user)
+           return redirect('home')
+        else:
+            form = LoginForm()
+            return render(request,'Login/Login.html',{
+                'form' : form,'error':'datos incorrectos'
+            })
+    else:
+        form = LoginForm()
+        return render(request,'Login/Login.html',{
+            'form' : form,'error':'datos incorrectos'
+        })          
+'''
 class LoginView(auth_views.LoginView):
     template_name = 'users_control/login.html'
     form_class = LoginForm
-    
+'''
 
 def elbuenconejo_logout(request):
+    print(request)
     if not request.user.is_authenticated:
         
         return redirect('home')

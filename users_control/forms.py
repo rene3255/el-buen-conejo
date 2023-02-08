@@ -9,20 +9,18 @@ class RegisterForm(forms.Form):
     username = forms.CharField(label='Alias', required=True,
                                 min_length=4, max_length=50,
                                 widget=forms.TextInput(attrs={
-                                    'class' : '',
                                     'id' : 'username',
                                     'placeholder' : 'Username'
                                 }))
     email = forms.EmailField(label='Correo electrónico', required=True,
                             widget=forms.EmailInput(attrs={
-                                'class' : '',
-                                'id' : 'username',
+                                'id' : 'email',
                                 'placeholder' : 'example@gmail.com'
         }))
     
     password = forms.CharField(label='Password', required=True,
                                 widget=forms.PasswordInput(attrs={
-                                    'class' : ''
+                                    'id':'password'
                                 }))
     
     
@@ -49,17 +47,14 @@ class RegisterForm(forms.Form):
         )
         
 class LoginForm(AuthenticationForm):
-    username = forms.CharField(label='Email / Username', required=True,
+    username = forms.CharField(label='Email', required=True,
                                widget=forms.EmailInput(attrs={
-                                'class' : '',
                                 'id' : 'email_username',
-                                'placeholder' : 'example@gmail.com'
-        })
-                                )
+                                }))
     
     password = forms.CharField(label='Password', required=True,
                                 widget=forms.PasswordInput(attrs={
-                                    'class' : ''
+                                    'id':'password'
                                 }))
     
     def clean_email(self):
