@@ -46,11 +46,24 @@
   border-radius: 4px;
   width: 100%;
   }
-  .font-register__password-info{
+  .font-register__password-info,
+  .register-info{
     font-size: 12px;
     color: var(--gray);
   }
   .font-register__password-info ul{
     padding: 0px 0px 0px 20px;
     margin: 0px;
+  }
+  .register-info{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 120%;
+    /* or 14px */
+    
+    text-align: center;
+    padding: 0px 5px 20px 5px;
+    max-width: 500px;
+    margin: auto;
   }

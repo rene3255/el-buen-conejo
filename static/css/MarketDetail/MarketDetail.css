@@ -1,0 +1,128 @@
+main{
+    padding: 0px 16px;
+}
+.container-detail-rabbit{
+    width: 100%;
+    display: grid;
+    padding: 5px;
+    gap: 5px;
+    overflow: hidden;
+}
+.container-detail-rabbit ul{
+    list-style: none;
+    padding: 0px;
+}
+.container-detail-rabbit figure{
+  margin: 0px;
+  background: var(--white-cero);
+  border: 1px solid var(--card-color);
+  border-radius: 4px;
+}
+.container-detail-rabbit figcaption{
+    width: 100%;
+    height: 96px;
+    margin: 0px;
+}
+.container-home-rabbit a{
+    text-decoration: none;
+    color:var(--nutural-800)
+}
+.container-detail-rabbit img{
+    width: 100%;
+}
+
+.details-rabbit table{
+    width: 250px;
+    text-align: left;
+    margin: auto;
+    border-spacing: 0px;
+    text-indent: 10px;
+    border: 1px solid #E0E0E0;
+    border-radius: 4px;
+}
+
+.details-rabbit tr{
+    border-spacing: 0px;
+}
+
+.details-rabbit .th-one{
+ background-color: var(--neutral-100);
+ height: 35px;
+}
+.details-rabbit .th-two{
+    background-color: var(--table-th-color);
+    height: 35px;
+}
+.details-rabbit h6{
+    margin-bottom: 10px;
+}
+
+.card-detail-rabbit{
+    width: 100%;
+    height: 200px;
+    background: #E8EBDC;
+    /* Shadow-200 */
+    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+    display: grid;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.details-productor h5{
+    margin-bottom: 10px;
+}
+.details-productor__header h5{
+    margin: 0px;
+}
+.details-productor__header{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 20% 40% 40%;
+    place-items: center;
+    margin-bottom: 20px;
+}
+.ejemplo-img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: blue;
+}
+.card-detail-rabbit h6{
+    margin: 0px;
+}
+.card-detail-rabbit__cast h4{
+    margin: 0px;
+}
+.card-detail-rabbit__cast{
+    margin-top: 20px;
+}
+.card-detail-rabbit__inf{
+    display: flex;
+    gap: 8px;
+}
+.card-detail-rabbit__btn{
+  display: grid;
+}
+.inf-card-item-detail{
+    
+width: 70px;
+height: 52px;
+
+background: #EFEDED;
+border: 0.5px solid #D9D9D9;
+border-radius: 8px;
+text-align: center;
+}
+.card-detail-rabbit__title-cost{
+    text-align: left;
+}
+.container-detail-rabbit{
+    width: 100%;
+    display: grid;
+    padding: 5px;
+    gap: 5px;
+}    
+.slider-detail{
+    height: 220px;
+}
