@@ -1,24 +1,15 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+
 def homepage(request):
     context = {
         'elbuenconejo': 'Hello from hompage view'
     }
     return render(request,'homepage/homepage.html',context)    
-
-def login(request):
-    context = {
-        'elbuenconejo': 'Hello from hompage view'
-    }
-    return render(request,'Login/Login.html',context)
-
-def register(request):
-    context = {
-        'elbuenconejo': 'Hello from hompage view'
-    }
-    return render(request,'Register/Register.html',context) 
-
+    
+@login_required
 def home(request):
     context = {
         'elbuenconejo': 'Hello from hompage view',
@@ -26,6 +17,7 @@ def home(request):
     }
     return render(request,'home/home.html',context)     
 
+@login_required
 def details(request):
     context = {
         'elbuenconejo': 'Hello from hompage view',
