@@ -5,17 +5,21 @@
 {% include 'layouts/header.html' %}
 <main>
     <form  class="form-register" action="#" method="post">
+      {% csrf_token %}
         <div class="form-register__header">
            <h4>Comienza a ser productor</h4>
            <span>Primero, crea tu cuenta en El buen conejo</span> <br>
            <span>¿Ya tienes cuenta?<a class="link__a" href="Register">Iniciá sesión</a></span>
+           {% if error != '' %}
+           <p>{{error}}</p>
+           {% endif %}
         </div>
         <div class="forn-register__name-last-name">
             <div class="form-register__input">
                 <label for="name">
                    <h6>Nombre</h6>
                 </label>
-                <input type="text" name="name" id="name" placeholder="Nombre" required>
+                {{form.username}} 
              </div>
              <div class="form-register__input">
                 <label for="last-name">
@@ -29,14 +33,14 @@
            <label for="email">
               <h6>Email</h6>
            </label>
-           <input type="email" name="email" id="email" placeholder="name@example.com" required>
+           {{form.email}}
         </div>
         <div class="form-register__input" >
            <label for="password">
               <h6>Contraseña</h6>
            </label>
            <div class="password-container">
-            <input type="password" name="password" id="password" placeholder="Introduce tu contraseña" required>
+            {{form.password}}
             <div class="eye-password-none" id="eye-password"></div>
           </div> 
            <div class="font-register__password-info">

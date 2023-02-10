@@ -4,23 +4,27 @@
 {% block content %}
 {% include 'layouts/header.html' %}
 <main>
-   <form  class="form-login" action="#" method="post">
+   <form  class="form-login" method="post" novalidate>
+      {% csrf_token %}
       <div class="form-login__header">
          <h4>Inicia sesión en El buen conejo</h4>
          <p>¿Aún no tienes cuenta? <a class="link__a" href="register">Regístrate ahora </a></p>
+         {% if error != '' %}
+           <p>{{error}}</p>
+         {% endif %}
       </div>
       <div class="form-login__input">
-         <label for="email">
+         <label for="email_username">
             <h6>Email</h6>
          </label>
-         <input type="email" name="email" id="email" placeholder="name@example.com" required>
+         {{form.username}}
       </div>
       <div class="form-login__input" >
          <label for="password">
             <h6>Contraseña</h6>
          </label>
          <div class="password-container">
-            <input type="password" name="password" id="password" placeholder="Introduce tu contraseña" required>
+            {{form.password}}
             <div class="eye-password-none" id="eye-password"></div>
          </div> 
       </div>
