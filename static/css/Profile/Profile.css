@@ -1,0 +1,14 @@
+.profile-farmer__header{
+ display: grid;
+ grid-template-columns: 50% 50%;
+ place-items: center;
+ margin: 10px 0px;
+}
+.profile-farmer__header{
+  width: 100%;
+  height: 100px;
+}
+.profile-user{
+    width: 100px;
+    height: 100px;
+}

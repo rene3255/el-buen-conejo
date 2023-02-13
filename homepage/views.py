@@ -24,4 +24,12 @@ def details(request):
         'path_rute':'details'
     }
     return render(request,'MarketDetails/MarketDetails.html',context)   
+
+@login_required
+def profile(request):
+    context = {
+        'elbuenconejo': 'Hello from hompage view',
+        'path_rute':'details'
+    }
+    return render(request,'Profile/Profile.html',context)   
   

@@ -76,5 +76,5 @@ def elbuenconejo_logout(request):
         print("Usuario", request.user.username)
         logout(request)
         messages.success(request,'Salió de sesión exitosamente')
-        return redirect('home')
+        return redirect('homepage')
           
