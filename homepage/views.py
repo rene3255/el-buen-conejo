@@ -32,4 +32,12 @@ def profile(request):
         'path_rute':'details'
     }
     return render(request,'Profile/Profile.html',context)   
+
+@login_required
+def myprofile(request):
+    context = {
+        'elbuenconejo': 'Hello from hompage view',
+        'path_rute':'details'
+    }
+    return render(request,'myProfile/MyProfile.html',context)   
   
