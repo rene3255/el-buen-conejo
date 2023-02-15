@@ -1,10 +1,11 @@
-Colima
-Villa de Álvarez
-Coquimatlán
-Cuauhtémoc
-Comala
-Armería
-Ixtlahuacán
-Manzanillo
-Minatitlán
-Tecomán
+id,state_id,city,created_at 
+1,9,Colima,2023-01-31
+2,9,Villa de Álvarez,2023-01-31
+3,9,Coquimatlán,2023-01-31
+4,9,Cuauhtémoc,2023-01-31
+5,9,Comala,2023-01-31
+6,9,Armería,2023-01-31
+7,9,Ixtlahuacán,2023-01-31
+8,9,Manzanillo,2023-01-31
+9,9,Minatitlán,2023-01-31
+10,9,Tecomán,2023-01-31

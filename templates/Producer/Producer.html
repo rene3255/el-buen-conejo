@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% include 'layouts/header.html' %}
+<main>
+    <form  method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+        <div class="form-register__header">
+           <h4>Perfil del productor</h4>
+           <span>Bien, llena tu perfil para convertirte en productor</span> <br>
+           <span>¿Ya tienes cuenta?<a class="link__a" href="Register">Iniciá sesión</a></span>
+           {% if error != '' %}
+              <p>{{ error }}</p>
+           {% endif %}
+        </div>
+        <div class="form-register__first-name">
+           <label for="first-name">
+              <h6>Nombre(s)</h6>
+           </label>
+           {{ form.first_name }} 
+        </div>
+        <div class="form-register__first-name">
+          <label for="last-name">
+             <h6>Apellidos</h6>
+          </label>
+          {{ form.last_name }} 
+       </div>
+
+       <div class="form-register__first-name">
+        <label for="last-name">
+           <h6>Ciudad</h6>
+        </label>
+        {{ form.city }} 
+       </div>
+       <div class="form-register__first-name">
+        <label for="photo">
+           <h6>Foto</h6>
+        </label>
+        {{ form.photo }} 
+       </div>
+
+       <div class="form-register__farm-name">
+        <label for="farm-name">
+           <h6>Nombre de la granja</h6>
+        </label>
+        {{ form.farm_name }} 
+       </div> 
+       <div class="form-register__first-name">
+        <label for="address">
+           <h6>Domicilio de la granja</h6>
+        </label>
+        {{ form.address }} 
+       </div> 
+       <input type="submit">
+      </form>
+    <script src="{% static 'js/form/form_register.js' %}" type="module" ></script>  
+</main>
+{% include 'layouts/footer.html' %}
+{% endblock %}
