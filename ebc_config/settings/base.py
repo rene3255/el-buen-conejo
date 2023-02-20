@@ -25,6 +25,7 @@ EL_BUEN_CONEJO_APPS = [
     'users_control',
     'resources',
     'farms',
+    'cage',
 ]
 
 THIRD_PARTY_APPS = ['cloudinary',]

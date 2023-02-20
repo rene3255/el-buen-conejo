@@ -1,4 +1,4 @@
-id,state_id,city,created_at 
+id,state,city,created_at 
 1,9,Colima,2023-01-31
 2,9,Villa de Álvarez,2023-01-31
 3,9,Coquimatlán,2023-01-31

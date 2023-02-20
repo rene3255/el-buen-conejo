@@ -1,0 +1,3 @@
+id,password,last_login,is_superuser,username,email,is_staff,is_active,is_verified,date_joined
+1,pbkdf2_sha256$390000$8qxuQHXOsDIooVYoW1pTJr$yH6xCwsl4Z2D+3Q7V7+DmlefjTG8LFXIP9wRNgtWRMo=,2023-02-16 12:19:22.224941-06,t,ebcadmin,ebcadmin@gmail.com,t,t,f,2023-02-16 07:38:57.004759-06
+2,eus1234,2023-02-16 12:14:22.224941-06,f,eustaquio,eustaquio@gmail.com,t,t,f,2023-02-16 08:39:57.004759-06

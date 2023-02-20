@@ -3,17 +3,23 @@ from users_control.models import CustomUser
 from resources.models import City
 from django.db.models.signals import post_save
 # Create your models here.
+
+class ProducerProfileManager(models.Manager):
+    def producer_valided(self, user):
+        return self.filter(id=user, is_producer=True).first()
+       
 class ProducerProfile(models.Model):
   
-    first_name    = models.CharField(max_length=100, null=True, blank=True)
-    last_name     = models.CharField(max_length=100, null=True, blank=True)
-    city          = models.ForeignKey(City, on_delete=models.CASCADE, null=True, blank=True)
-    photo         = models.ImageField('Producer profile',upload_to="media/",
+    first_name = models.CharField(max_length=100, null=True, blank=True)
+    last_name = models.CharField(max_length=100, null=True, blank=True)
+    city = models.ForeignKey(City, on_delete=models.CASCADE, null=True, blank=True)
+    photo = models.ImageField('Producer profile',upload_to="media/",
                                       null=True, blank=True)
-    farm_name     = models.CharField(max_length=150, null=True, blank=True)
-    address       = models.CharField(max_length=200, null=True, blank=True)
-    producer      = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
-
+    farm_name = models.CharField(max_length=150, null=True, blank=True)
+    address = models.CharField(max_length=200, null=True, blank=True)
+    is_producer = models.BooleanField(default=False)
+    producer = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
+    objects = ProducerProfileManager()
 
     def __str__(self):
         return f'Perfil del productor {self.producer}'

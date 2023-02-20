@@ -30,5 +30,5 @@ class ProfileForm(forms.ModelForm):
         fields = ['first_name', 'last_name',
                   'city', 'photo', 'farm_name', 'address' 
         ]
-   
+        exclude = ('is_producer',)
     

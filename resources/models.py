@@ -13,7 +13,7 @@ class State(models.Model):
         return self.state    
 
 class City(models.Model):
-    state_id = models.ForeignKey(State, on_delete=models.CASCADE, related_name='state_city')
+    state = models.ForeignKey(State, on_delete=models.CASCADE, related_name='state_city')
     city = models.CharField(max_length=100)
     created_at = models.DateTimeField(auto_now_add=True)
     

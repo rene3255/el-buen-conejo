@@ -21,4 +21,14 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     
     def __str__(self):
         return self.email
+  
+class AccessControlManager(models.Manager):
+    def valid_active_user(self, userkey):
+        user_num = self.get(active_user=userkey)
+        return user_num
       
+class AccessControl(models.Model):
+    active_user = models.IntegerField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    objects = AccessControlManager()
+    

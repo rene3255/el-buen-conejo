@@ -8,5 +8,6 @@ urlpatterns = [
     path('', include('homepage.urls')),
     path('', include('users_control.urls')),
     path('', include('farms.urls')),
+    path('', include('cage.urls')),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

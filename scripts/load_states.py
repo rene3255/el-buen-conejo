@@ -1,14 +1,10 @@
 from resources.models import State, City
+from resources.utils import reset_autoincrement_sql_tables
 from farms.models import ProducerProfile
 from users_control.models import CustomUser
 import csv
 from datetime import datetime
 from django.db import connection
-import environ
-import os
-
-env = environ.Env()
-environ.Env.read_env()
 
 def run():
   print("Initializing catalogs...")
@@ -20,6 +16,18 @@ def run():
   print("Cities catalog created...")
   add_producers_profiles()
   print("Producers added...")
+
+def add_custom_user():
+    with open('scripts/states_list.csv') as file:
+        reader = csv.reader(file)
+        next(reader)  # Advance past the header
+
+        for row in reader:
+            print(row)
+            state = State(state=row[1],  
+                      
+                        )
+            state.save()
   
 def add_states():
     with open('scripts/states_list.csv') as file:
@@ -40,7 +48,7 @@ def add_cities():
         
         for row in reader:
             print(row[1],row[2])
-            city = City(state_id = State.objects.get(id=row[1]),
+            city = City(state = State.objects.get(id=row[1]),
                         city = row[2],
                         created_at = datetime.now())
             
@@ -68,6 +76,6 @@ def add_producers_profiles():
 
 def reset_auto_increment():
     with connection.cursor() as cursor:
-        cursor.execute("TRUNCATE TABLE resources_state RESTART IDENTITY CASCADE;")
+        cursor.execute(reset_autoincrement_sql_tables())
          
     
