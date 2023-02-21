@@ -2,4 +2,6 @@
 @import url(./components/components.css);
 @import url(./homepage/homepage.css);
 @import url(./Login/Login.css);
+@import url(./home/home.css);
 @import url(./Register/Register.css);
+@import url(./MarketDetail/MarketDetail.css);

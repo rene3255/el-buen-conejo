@@ -19,7 +19,7 @@ d.addEventListener('DOMContentLoaded',(e)=>{
             console.log(valitate_string(form_register.last_name.value));
             console.log(validate_Email(form_register.email.value));
             console.log(validate_password(form_register.password.value));
-            //form_register.submit();
+            form_register.submit();
         });
         console.log("se cargo");
     }

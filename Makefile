@@ -1,18 +1,23 @@
 run:
-		python3 manage.py collectstatic --noinput --clear
-		python3 manage.py runserver
+	    python manage.py runserver
+
+runclear:
+		python manage.py collectstatic --noinput --clear
+		python manage.py runserver
 		
 mig:
-		python3 manage.py makemigrations
+		python manage.py makemigrations
 
 migbis:
-		python3 manage.py migrate
+		python manage.py migrate
 require:
-		python3 -m pip install -r requirements.txt		
+		python -m pip install -r requirements.txt		
 
 limpia:
 		clear
 		git branch
 
 test:
-		python3 manage.py test
+		python manage.py test
+load:
+		python3 manage.py runscript load_states

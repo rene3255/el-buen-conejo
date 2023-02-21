@@ -1,6 +1,7 @@
 from django.contrib.auth import get_user_model
 from django.test import TestCase
-
+from users_control.views import elbuenconejo_login
+from django.urls import reverse
 class UsersControlTest(TestCase):
 # Create your tests here
     def test_create_user(self):
@@ -38,4 +39,9 @@ class UsersControlTest(TestCase):
                 email="ebcadmin@gmail.com", password="pwdebc", is_superuser=False)
 
             
-                      
+    def test_elbuenconejo_login_get(self):
+        url = reverse("login")
+        print("el url es: %s" % url)
+        response = self.client.get(url)
+        self.assertEqual(response.status_code,200)
+        self.assertTemplateUsed(response,"Login/Login.html")

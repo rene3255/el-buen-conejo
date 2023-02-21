@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% include 'layouts/header.html' with path_rute="home" %}
+<main>
+    <article class="container-home-slider-rabbit-breeds">
+      <div class="container-slider__title">
+        <h6>Buscar por razas</h6>
+        <div> 
+            <button class="btn btn-primary-border-white btn-xs"><<</button>
+            <button class="btn btn-primary-border-white btn-xs">>></button>
+        </div>
+      </div>
+      <div class="slider">
+        <ul class="slides">
+           <li class="slide" id="slide1">
+            <a href="#">
+                <figure class="figure-card">
+                    <img src={% static 'img/slide-home/raza1.png' %}  alt="">
+                    <figcaption>
+                        Mini Lop
+                    </figcaption>
+                </figure>
+            </a>
+           </li>
+           <li class="slide" id="slide2">
+            <a href="#">
+                <figure class="figure-card" >
+                    <img src={% static 'img/slide-home/raza2.png' %}  alt="">
+                    <figcaption>
+                        Black de Hotot
+                    </figcaption>
+                </figure>
+            </a>
+           </li>
+           <li class="slide" id="slide3">
+            <a href="#">
+                <figure class="figure-card">
+                    <img src={% static 'img/slide-home/raza3.png' %}  alt="">
+                    <figcaption>
+                        Conejo rex 
+                    </figcaption>
+                </figure>
+            </a>
+           </li>
+           <li class="slide" id="slide4">
+            <a href="#">
+                <figure class="figure-card">
+                    <img src={% static 'img/slide-home/raza2.png' %}  alt="">
+                    <figcaption>
+                        Gigante de Flandes
+                    </figcaption>
+                </figure>
+            </a>
+           </li>
+           <li class="slide" id="slide5">
+            <a href="#">
+                <figure class="figure-card">
+                    <img src={% static 'img/slide-home/raza1.png' %}  alt="">
+                    <figcaption>
+                        Nueva Zelenda Blanco
+                    </figcaption>
+                </figure>
+            </a>
+           </li>
+        </ul>
+      </div>
+    </article>
+    <article class="container-home-button-filter">
+            <button class="btn btn-primary-border-white btn-sm">
+                Resiente <span>></span>
+            </button>
+            <button class="btn btn-primary-border-white btn-sm">
+                Filtrar <span>-</span>
+            </button>
+    </article>
+    <article class="container-home-rabbit">
+        <a href="makeDetails">
+            <figure>
+                <img src={% static 'img/slide-home/raza3.png' %}  alt="">
+                <figcaption>
+                    <ul>
+                        <li>Titulo</li>
+                        <li>$000</li>
+                        <li class="flex"><div class="icon-geo"></div> {Ubicacion}</li>
+                    </ul>
+                </figcaption>
+            </figure>
+        </a>
+        <a href="makeDetails">
+            <figure>
+                <img src={% static 'img/slide-home/raza3.png' %}  alt="">
+                <figcaption>
+                    <ul>
+                        <li>Titulo</li>
+                        <li>$000</li>
+                        <li class="flex"><div class="icon-geo"></div> {Ubicacion}</li>
+                    </ul>
+                </figcaption>
+            </figure>
+        </a>
+        <a href="makeDetails">
+            <figure>
+                <img src={% static 'img/slide-home/raza3.png' %}  alt="">
+                <figcaption>
+                    <ul>
+                        <li>Titulo</li>
+                        <li>$000</li>
+                        <li class="flex"><div class="icon-geo"></div> {Ubicacion}</li>
+                    </ul>
+                </figcaption>
+            </figure>
+        </a>
+        <a href="makeDetails">
+            <figure>
+                <img src={% static 'img/slide-home/raza3.png' %}  alt="">
+                <figcaption>
+                    <ul>
+                        <li>Titulo</li>
+                        <li>$000</li>
+                        <li class="flex"><div class="icon-geo"></div></span> {Ubicacion}</li>
+                    </ul>
+                </figcaption>
+            </figure>
+        </a>
+        <a href="makeDetails">
+            <figure>
+                <img src={% static 'img/slide-home/raza3.png' %}  alt="">
+                <figcaption>
+                    <ul>
+                        <li>Titulo</li>
+                        <li>$000</li>
+                        <li class="flex"><div class="icon-geo"></div> <span>{Ubicacion}</span></li>
+                    </ul>
+                </figcaption>
+            </figure>
+        </a>
+        <a href="makeDetails">
+            <figure>
+                <img src={% static 'img/slide-home/raza3.png' %}  alt="">
+                <figcaption>
+                    <ul>
+                        <li>Titulo</li>
+                        <li>$000</li>
+                        <li class="flex"><div class="icon-geo"></div></span> {Ubicacion}</li>
+                    </ul>
+                </figcaption>
+            </figure>
+        </a>
+    </article>
+</main>
+{% include 'layouts/footer.html' %}
+{% endblock %}

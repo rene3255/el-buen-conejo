@@ -1,5 +1,4 @@
 
-from django.shortcuts import render
 from wsgiref.util import request_uri
 from django.shortcuts import render,redirect
 from django.contrib.auth import authenticate,logout,login
@@ -18,7 +17,15 @@ from django.contrib.auth import views as auth_views
 def register(request):
     if request.user.is_authenticated:
         return redirect('home')
-    form = RegisterForm(request.POST or None)
+      
+    if request.method == 'GET':
+        form=RegisterForm()
+        return render(request,'Register/Register.html',{
+            'form' : form,'error':''
+        })
+    
+
+    form = RegisterForm( data=request.POST)
     if request.method == 'POST' and form.is_valid():
 
         user = form.save()
@@ -26,25 +33,43 @@ def register(request):
             login(request,user)
             messages.success(request,'Cuenta creada exitosamente')
             return redirect('home')
-           
+    else:
+        form=RegisterForm()
+        return render(request,'Register/Register.html',{
+            'form' : form,'error':'datos incorrectos'
+        })      
 
-    return render(request,'users_control/register.html',{
-        'form' : form,
-    })
-
-
-class LoginView(auth_views.LoginView):
-    template_name = 'users_control/login.html'
-    form_class = LoginForm
+def elbuenconejo_login(request):
+    if request.user.is_authenticated:
+        return redirect('home')
+    if request.method == 'GET':
+        form = LoginForm()
+        return render(request,'Login/Login.html',{
+            'form' : form,'error':''
+        })
+    form = LoginForm(request=request, data=request.POST)
     
+    if request.method == 'POST' and form.is_valid():
+        user = authenticate(username=request.POST['username'], password=request.POST['password'])
+        if user is not None:
+           login(request,user)
+           return redirect('home')
+        else:
+            form = LoginForm()
+            return render(request,'Login/Login.html',{
+                'form' : form,'error':'datos incorrectos'
+            })
+    else:
+        form = LoginForm()
+        return render(request,'Login/Login.html',{
+            'form' : form,'error':'datos incorrectos'
+        })          
 
 def elbuenconejo_logout(request):
     if not request.user.is_authenticated:
-        
-        return redirect('home')
-    else: 
-        print("Usuario", request.user.username)
+        return render(request,'homepage/homepage.html')
+      
+    if request.method == 'GET':
         logout(request)
-        messages.success(request,'Salió de sesión exitosamente')
-        return redirect('home')
-          
+    
+    return render(request,'homepage/homepage.html')
