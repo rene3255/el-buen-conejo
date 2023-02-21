@@ -15,3 +15,24 @@ export function active_display(
             }
         })
     }
+export function MenuProfileGeneral(
+    class_ancla="",
+    button_active="",
+    elment_active='',
+    attribute=""
+){
+        const button=document.querySelectorAll('.'+class_ancla);
+        button.forEach(el=>{
+            el.addEventListener("click",(e)=>{
+                const button=document.querySelector("."+button_active);
+                const element=document.querySelector("."+button.getAttribute(attribute));
+                const element_menu=document.querySelector("."+el.getAttribute(attribute));
+                
+                button.classList.remove(button_active);
+                element.classList.remove(elment_active);
+    
+                el.classList.add(button_active);
+                element_menu.classList.add(elment_active);
+            })
+        })
+    }
