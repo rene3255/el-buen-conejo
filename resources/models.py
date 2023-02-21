@@ -24,4 +24,27 @@ class City(models.Model):
     
     def __str__(self):
         return self.city
-  
+
+class Breed(models.Model):
+    breed = models.CharField(max_length=30)
+    created_at = models.DateTimeField(auto_now_add=True)    
+    
+    class Meta:
+        verbose_name = ('breed')
+        verbose_name_plural = ('breeds')
+        ordering = ['breed']
+     
+    def __str__(self):
+        return self.breed    
+
+class RabbitStatus(models.Model):
+    status = models.CharField(max_length=30)
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    class Meta:
+        verbose_name = ('Rabbit status')
+        verbose_name_plural = ('Rabbits Status')
+        ordering = ['status']
+    
+    def __str__(self):
+        return self.status

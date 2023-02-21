@@ -4,10 +4,11 @@ from resources.models import City
 from django.db.models.signals import post_save
 # Create your models here.
 
-class ProducerProfileManager(models.Manager):
-    def producer_valided(self, user):
-        return self.filter(id=user, is_producer=True).first()
-       
+class ProducerManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(is_producer=True)
+
+
 class ProducerProfile(models.Model):
   
     first_name = models.CharField(max_length=100, null=True, blank=True)
@@ -19,8 +20,10 @@ class ProducerProfile(models.Model):
     address = models.CharField(max_length=200, null=True, blank=True)
     is_producer = models.BooleanField(default=False)
     producer = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
-    objects = ProducerProfileManager()
-
+    
+    objects = models.Manager()
+    producers = ProducerManager()
+    
     def __str__(self):
         return f'Perfil del productor {self.producer}'
   

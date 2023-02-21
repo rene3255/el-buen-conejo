@@ -32,7 +32,8 @@ and if it is the case,  he or she is authorized to entry a cage information.
 I belive that we can add a column into the producer profile model. This column must be a boolean field to check where the producer confirm he or she wants to
 be a producer. At the end of the day, the booelan fields gonna serve as a indicator in case the producer can add cage or whatever information.
 
-
+## 20 Monday  Feb
+Las week was really nutritive I learned about Model Managers and Validators. Alose I finished the cage model and since now to forward I'm going to build the rabbits model. The CRUD is the main goal for this week.
 
 
 ## Scripts

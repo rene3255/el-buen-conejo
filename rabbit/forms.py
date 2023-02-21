@@ -1,19 +1,14 @@
 from django import forms
-from cage.models import Cage
+from resources.models import Breed
 
 
-class AddCageForm(forms.ModelForm):
+class AddBreedForm(forms.ModelForm):
   
-    cage_title = forms.CharField(label='Título de la jaula',
-                 max_length=50,
-                 widget=forms.TextInput(
-                 attrs={'class': 'form-control'})
-                )
-    
-    batch_number = forms.IntegerField(label='No. de Lote')
-    rabbits_number = forms.IntegerField(label='No. conejos')
-    is_public = forms.ChoiceField(label="Jaula Pública o Privada", choices=[(True, ('Si')), (False, ('No'))])
-    cage_photo = forms.ImageField(label="Upload")
+    breed = forms.ModelChoiceField(queryset=Breed.objects.all())
+    sex = forms.ChoiceField(label="Sexo", choices=[('M', ('Macho')), ('H', ('Hembra'))])    
+    rabbit_tag = forms.CharField(max_length=20)
+    birth_date = forms.DateField()
+    weight = forms.DecimalField(decimal_places=1,max_digits=3, min_digits=1)
     
     def clean_batch_number(self):
         number = self.cleaned_data['batch_number']

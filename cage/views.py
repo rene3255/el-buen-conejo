@@ -8,19 +8,17 @@ import os
 from django.conf import settings
 from PIL import Image
 # Create your views here.
-@login_required
+@login_required(login_url='login')
 def add_cage(request):
     
     if request.method == 'POST':
         form = AddCageForm(request.POST, request.FILES)
         if form.is_valid():
             cage = form.save(commit=False)
-            print("request.user ",request.user.id)
-            producer_id = ProducerProfile.objects.producer_valided(request.user.id)
-            #producer_id = ProducerProfile.objects.filter(id=request.user.id, first_name__isnull=False).first()
-            cage.farm =producer_id
-            cage.is_producer = True
-            cage.save()
+            valid_user = ProducerProfile.objects.get(id=request.user.id, is_producer=True)
+            if valid_user:
+              cage.farm =valid_user
+              cage.save()
             if cage:
                 return redirect('home')
     else:
