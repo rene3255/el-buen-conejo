@@ -1,5 +1,6 @@
 from django.db import models
 from farms.models import ProducerProfile
+from django.utils.functional import cached_property
 # Create your models here.
 
 class CageManager(models.Manager):
@@ -11,11 +12,13 @@ class CageManager(models.Manager):
     
 class PublicCageManager(models.Manager):
     def get_queryset(self):
-        return super(PublicCageManager, self).get_queryset().filter(is_public=True)
+        return super(PublicCageManager,
+                     self).get_queryset().filter(is_public=True)
 
 class PrivateCageManager(models.Manager):
     def get_queryset(self):
-        return super(PrivateCageManager, self).get_queryset().filter(is_public=False)
+        return super(PrivateCageManager,
+                     self).get_queryset().filter(is_public=False)
                   
 class Cage(models.Model):
     CAGE_PUBLIC = (
@@ -31,7 +34,6 @@ class Cage(models.Model):
     details = models.CharField(max_length=255,null=True, blank=True)
     cage_photo =  models.ImageField('Producer profile',upload_to="media/",
                                       null=True, blank=True)   
-    
     farm = models.ForeignKey(ProducerProfile, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     
@@ -53,5 +55,8 @@ class Cage(models.Model):
         else:
             publish = " no es pública"
         return "Jaula " + self.cage_title + publish
-    
+      
+    @cached_property
+    def rabbits_per_cage(self):
+        return self.cage_title + " " + self.rabbits_number 
     

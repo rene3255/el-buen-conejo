@@ -10,8 +10,11 @@ import csv
 from datetime import datetime
 from django.db import connection
 
+
+
 def run():
   print("Initializing catalogs...")
+ 
   reset_auto_increment_custom_users()
   
   print("Database tables deleted...")
@@ -30,6 +33,7 @@ def run():
   print("Rabbit status added...")
   add_producers_profiles()
   print("Producers added...")
+
 
 def add_custom_user():
     with open('scripts/customusers.csv') as file:
@@ -129,13 +133,18 @@ def add_rabbit_status():
 def reset_auto_increment():
     with connection.cursor() as cursor:
         cursor.execute(reset_autoincrement_sql_tables())
+        
 
 def reset_auto_increment_custom_users():
     with connection.cursor() as cursor:
         cursor.execute(reset_autoincrement_sql_customusers())
+        
+
 def reset_auto_increment_rabbit_status():
     with connection.cursor() as cursor:
         cursor.execute(reset_autoincrement_sql_rabbit_status())
+        
+
 def reset_auto_increment_breeds():
     with connection.cursor() as cursor:
         cursor.execute(reset_autoincrement_sql_rabbit_breeds())

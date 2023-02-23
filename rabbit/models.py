@@ -1,5 +1,6 @@
 from django.db import models
 from resources.models import Breed, RabbitStatus
+from cage.models import Cage
 # Create your models here.
 class Buck(models.Model):
     buck_name = models.CharField(max_length=30)
@@ -29,6 +30,7 @@ class Rabbit(models.Model):
     observation = models.TextField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     
+    cage = models.ForeignKey(Cage, on_delete=models.CASCADE)
     
     class Meta:
           verbose_name = "Rabbit"
