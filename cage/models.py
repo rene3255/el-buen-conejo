@@ -1,6 +1,10 @@
 from django.db import models
 from farms.models import ProducerProfile
 from django.utils.functional import cached_property
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+
+
 # Create your models here.
 
 class CageManager(models.Manager):
@@ -10,6 +14,10 @@ class CageManager(models.Manager):
     def list_cages(self):
         return self.filter(cage_title__isnull=False)
     
+    def cages_by_farm(self, farm):
+        return self.filter(cage_title__isnull=False, farm=farm) 
+      
+
 class PublicCageManager(models.Manager):
     def get_queryset(self):
         return super(PublicCageManager,
@@ -19,6 +27,7 @@ class PrivateCageManager(models.Manager):
     def get_queryset(self):
         return super(PrivateCageManager,
                      self).get_queryset().filter(is_public=False)
+
                   
 class Cage(models.Model):
     CAGE_PUBLIC = (
@@ -28,25 +37,27 @@ class Cage(models.Model):
     
     cage_title = models.CharField(max_length=50, unique=True)
     batch_number = models.PositiveIntegerField(null=True, blank=True)
-    rabbits_number = models.PositiveIntegerField(null=True, blank=True)
+    rabbits_number = models.PositiveIntegerField(default=0, null=True, blank=True)
     is_public = models.BooleanField(choices=CAGE_PUBLIC, 
                                  default=CAGE_PUBLIC[1][0])
     details = models.CharField(max_length=255,null=True, blank=True)
     cage_photo =  models.ImageField('Producer profile',upload_to="media/",
                                       null=True, blank=True)   
-    farm = models.ForeignKey(ProducerProfile, on_delete=models.CASCADE)
+    farm = models.ForeignKey(ProducerProfile, on_delete=models.CASCADE, related_name="cages")
     created_at = models.DateTimeField(auto_now_add=True)
-    
+    is_active = models.BooleanField(default=True)
     objects = models.Manager()
     cages = CageManager()
     public_cages = PublicCageManager()
     private_cages = PrivateCageManager() 
     
     
+    
       
     class Meta:
         verbose_name = "Lista de Jaulas"
         verbose_name_plural = "Total de Jaulas"
+        default_manager_name = "objects"
         
                 
     def __str__(self):

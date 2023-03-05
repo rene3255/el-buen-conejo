@@ -1,5 +1,5 @@
 id,password,last_login,is_superuser,username,email,is_staff,is_active,is_verified,date_joined
-3,pbkdf2_sha256$390000$UVriStukrX3wu0E4504Cak$e1ikc4yi+mnSuRe96CZD4R6W+/xbhvxwRnuJd8TMje0=,2023-02-20 21:29:23.159756-06,f,mily@gmail.com,mily@gmail.com,f,t,f,2023-02-17 21:23:46.019578-06
-2,pbkdf2_sha256$390000$uDT09Jb0xLkA3I1cdco81P$Q4siYDvVa4wITEveLQbsbHcaz9IRx+Fc8gifSiHA4zo=,2023-02-21 07:54:54.010062-06,f,frida,frida@gmail.com,f,t,f,2023-02-16 22:12:30.111212-06
 1,pbkdf2_sha256$390000$8qxuQHXOsDIooVYoW1pTJr$yH6xCwsl4Z2D+3Q7V7+DmlefjTG8LFXIP9wRNgtWRMo=,2023-02-21 10:55:54.626629-06,t,ebcadmin,ebcadmin@gmail.com,t,t,f,2023-02-16 07:38:57.004759-06
+2,pbkdf2_sha256$390000$uDT09Jb0xLkA3I1cdco81P$Q4siYDvVa4wITEveLQbsbHcaz9IRx+Fc8gifSiHA4zo=,2023-02-21 07:54:54.010062-06,f,frida,frida@gmail.com,f,t,f,2023-02-16 22:12:30.111212-06
+3,pbkdf2_sha256$390000$UVriStukrX3wu0E4504Cak$e1ikc4yi+mnSuRe96CZD4R6W+/xbhvxwRnuJd8TMje0=,2023-02-20 21:29:23.159756-06,f,mily@gmail.com,mily@gmail.com,f,t,f,2023-02-17 21:23:46.019578-06
 4,pbkdf2_sha256$390000$XiXsykx19Hzqd1Ohe8ehvM$1FndsBdfPKeoamHvLkkP1xrSd+VJqvLcKiVIZ27Ze74=,2023-02-19 21:18:27.311515-06,f,Mateo,mateo@gmail.com,f,t,f,2023-02-19 21:02:54.283491-06

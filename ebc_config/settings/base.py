@@ -27,6 +27,8 @@ EL_BUEN_CONEJO_APPS = [
     'farms',
     'cage',
     'rabbit',
+    'doe',
+    'buck',
 ]
 
 THIRD_PARTY_APPS = ['cloudinary',]

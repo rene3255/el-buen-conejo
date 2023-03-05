@@ -33,21 +33,23 @@ I belive that we can add a column into the producer profile model. This column m
 be a producer. At the end of the day, the booelan fields gonna serve as a indicator in case the producer can add cage or whatever information.
 
 ## 20 Monday  Feb
-Las week was really nutritive I learned about Model Managers and Validators. Alose I finished the cage model and since now to forward I'm going to build the rabbits model. The CRUD is the main goal for this week.
+Last week was really nutritive I learned about Model Managers and Validators. Alose I finished the cage model and since now to forward I'm going to build the rabbits model. The CRUD is the main goal for this week.
+
+## 28 Tue Feb
+Into the period 21 to 28 feb the project advances consisted databases model rabbit.Some doubts arises from recursive fields between rabbits and mothers rabbits, same for bucks and rabbits.
+
+## 03 Fri Mar
+Was a frustated day because my partner get off from the ship team. He said  
+that his scholar agenda was shriked. What a shame!
+
+Well, the last two days were full of learning. Let me explain, I hadn´t find how to resolve an error in the class AddRabbitForm. particularly the Cage field, its ModelChoiceField and each time I filter the cage by a producer or user authenticated it depicted all table content.
+At the end of the last two days the bug was fixed the knowledgement was super.
+## 05 Sun Mar
+Yesterday I solved through signals the issue of saving the rabbit entered into the cage field called "rabbits_number".
+So far, I'll be working in the feature to pass automatically the rabbit with status "Buck" or "Does".
 
 
 ## Scripts
 python3 manage.py runscript load_states
 TRUNCATE TABLE resources_state RESTART IDENTITY CASCADE;
-\COPY farms_producerprofile to 'produces.csv' csv header;
-Cuando se guarda listas en el archivo '.env' va así: MY_LIST="['my_string1','my_string2']"
-
-def my_login_required(function):
-    def wrapper(request, *args, **kw):
-        user=request.user  
-        if not (user.id and request.session.get('code_success')):
-            return HttpResponseRedirect('/splash/')
-        else:
-            return function(request, *args, **kw)
-    return wrapper
-
+\COPY farms_producerprofile to 'produces.csv' csv header

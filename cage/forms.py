@@ -11,7 +11,7 @@ class AddCageForm(forms.ModelForm):
                 )
     
     batch_number = forms.IntegerField(label='No. de Lote')
-    rabbits_number = forms.IntegerField(label='No. conejos')
+    #rabbits_number = forms.IntegerField(label='No. conejos')
     is_public = forms.ChoiceField(label="Jaula Pública o Privada", choices=[(True, ('Si')), (False, ('No'))])
     cage_photo = forms.ImageField(label="Upload")
     
@@ -33,8 +33,8 @@ class AddCageForm(forms.ModelForm):
       
         model = Cage
         fields = ['cage_title', 'batch_number', 
-                  'rabbits_number','is_public', 'cage_photo'
+                  'is_public', 'cage_photo'
         ]
-        exclude = ('farm',)
+        exclude = ('farm', 'is_active','rabbits_number',)
         
     

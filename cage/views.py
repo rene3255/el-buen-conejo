@@ -20,7 +20,7 @@ def add_cage(request):
               cage.farm =valid_user
               cage.save()
             if cage:
-                return redirect('home')
+                return redirect('add-rabbit')
     else:
         form=AddCageForm()
     return render(request,'Cage/AddCage.html',{
