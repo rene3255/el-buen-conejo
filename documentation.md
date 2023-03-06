@@ -1,3 +1,88 @@
+Conejería
+
+
+Preliminary table list
+
+Producers
+Rabbits
+Farms
+Interest Sites
+Videos
+Clients
+
+
+Epic story
+
+Desde hace dos años me convertí en granjero urbano de conejos. Veamos, cuando me refiero a la frase “granjero urbano” es porque la granja se ecuentra dentro de la mancha urbana por lo que esa actividad representa un micro-negocio, mejor  nano-negocio. Sin embargo después de dos años es un hobbie que sólo produce carne de conejo para el sustento familiar, sin representar esa producción un indicador sobresaliente, quiero decir, económicamente no es un indicador representativo.
+
+Por otra parte, en el estado de Colima, la producción de conejo sólo se conoce mediante las redes sociales, principalmente Facebook, y no se tiene conocimiento de una fuente de datos que informe sobre el inventario estatal o municipal del sector cunicola.
+
+Aunado a lo anterior, es cierto que no se cuenta con una asociación o consejo de la crianza de conejo o gallinas en el estado cuantimás a nivel municipal.
+
+
+Keyword
+Mating.- Empadre o monta programada entre la hembra reproductora y el semental.
+Granja urbana
+Cunicola
+Nano-negocio
+
+
+
+
+
+Concepts
+
+Mating
+When does become receptive to mating, they will usually show signs of being in heat. 
+
+
+User Stories
+
+Producer
+Como productor quiero llevar el control de la crianza de conejos para saber con precisión con que stock de animales cuento.
+
+Como productor quiero un expediente por coneja reproductora para determinar la prolificidad y productividad de la coneja.
+
+Como productor quiero publicar videos (máximo de 2 minutos) para dar a conocer la crianza. Así, posicionarme en el mercado.
+
+Como productor quiero conocer el padrón de criadores de conejos para conocer el tamaño del
+ gremio en la entidad.
+
+Como productor  quiero comentar las publicaciones de los granjeros para retroalimentar las mejores prácticas de cada uno de los granjeros y porsupuesto felicitarlos.
+
+Como productor quiero contar con un reporte dentro de un periodo de la productividad de la granja.
+
+
+Administrator
+Como Administrador soy el único que autorizo el registro de productores para controlar quienes son aptos para ser miembros del buen conejo.
+
+Como administrador quiero registrarse sólo con mi correo electrónico y mi nombre para poder ver algunas funcionalidades de la app  ccpcc. 
+
+Como usuario decido si quiero convertirme en productor por lo que quiero contar con una funcionalidad para solicitar mi inscripción como productor. 
+
+ 
+
+
+
+
+
+
+
+
+Client
+
+Como cliente deseo ver las granjas que venden conejos para tener la posibilidad de comprar la mejor opción.
+
+Como cliente quiero conocer los mejores precios por kilogramo de carne de conejo para facilitarme la decisión de compra.
+
+Como cliente deseo ver  los próximos eventos  e información de lo que se trata.
+
+Como cliente quiero enviarle un mensaje al productor y poder llegar a un acuerdo de compra-venta.
+
+Como cliente quiero poder convertirme en un momento dado en productor de conejos.
+
+
+https://www.cdrf.co/
 
 # Project annotations
 
@@ -29,11 +114,10 @@ Comeback to the project, yesterday a got Producer profile CRUD.  Now I'm working
 
 Surged a doubt about the producer profile. Let me put a question on the dialog table, How to know if a user gonna become in a rabbit producer? 
 and if it is the case,  he or she is authorized to entry a cage information.
-I belive that we can add a column into the producer profile model. This column must be a boolean field to check where the producer confirm he or she wants to
-be a producer. At the end of the day, the booelan fields gonna serve as a indicator in case the producer can add cage or whatever information.
+I belive that we can add a column into the producer profile model. This column must be a boolean field to check where the producer confirm he or she wants to be a producer. At the end of the day, the booelan field gonna run as a indicator in case the producer can add cage or any information.
 
 ## 20 Monday  Feb
-Last week was really nutritive I learned about Model Managers and Validators. Alose I finished the cage model and since now to forward I'm going to build the rabbits model. The CRUD is the main goal for this week.
+Last week was really nutritive I learned about Model Managers and Validators. Also I finished the cage model and since now to forward I'm going to build the rabbits model. The CRUD is the main goal for this week.
 
 ## 28 Tue Feb
 Into the period 21 to 28 feb the project advances consisted databases model rabbit.Some doubts arises from recursive fields between rabbits and mothers rabbits, same for bucks and rabbits.
