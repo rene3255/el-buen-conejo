@@ -26,7 +26,9 @@ Aunado a lo anterior, ciertamente,  **no se cuenta con una asociación o consejo
 
 |Frontend||
 |---|:---:|
+
 |JavaScript||
+
 |CSS||
 
 # Conejería
