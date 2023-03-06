@@ -1,4 +1,4 @@
-# Consejo Colimense de Productores de Carne de Conejo
+# El buen conejo
 |--------------------------
 
 Desde hace dos años me convertí en **granjero urbano** de conejos. Veamos, cuando me refiero a la frase “granjero urbano” es porque la granja se ecuentra dentro de la mancha urbana por lo que esa actividad representa un micro-negocio, mejor dicho nano-negocio. Sin embargo después de dos años es un hobbie que sólo produce carne de conejo y huevo para el sustento familiar. Sin representar esa producción un indicador sobresaliente para considerarlo un negocio; quiero decir, económicamente no es un indicador representativo.
