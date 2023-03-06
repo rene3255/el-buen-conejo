@@ -1,9 +1,9 @@
-# El buen conejo
+# Elbuenconejo
 |--------------------------
 
-Desde hace dos años me convertí en **granjero urbano** de conejos. Veamos, cuando me refiero a la frase “granjero urbano” es porque la granja se ecuentra dentro de la mancha urbana por lo que esa actividad representa un micro-negocio, mejor dicho nano-negocio. Sin embargo después de dos años es un hobbie que sólo produce carne de conejo y huevo para el sustento familiar. Sin representar esa producción un indicador sobresaliente para considerarlo un negocio; quiero decir, económicamente no es un indicador representativo.
+Desde hace dos años me convertí en **granjero urbano** de conejos. Veamos, cuando me refiero a la frase “granjero urbano” es porque la granja se ecuentra dentro de la mancha urbana por lo que esa actividad representa un micro-negocio, mejor dicho nano-negocio. Sin embargo después de dos años es un hobbie que sólo produce carne de conejo para el sustento familiar. Sin representar esa producción un indicador sobresaliente para considerarlo un negocio; quiero decir, económicamente no es un indicador representativo.
 
-Por otra parte, en el estado de Colima, la producción de conejo sólo se conoce mediante las redes sociales, principalmente unos cuantos -- de dos a cinco grupos -- grupos de Facebook, y no se tiene conocimiento de una fuente de datos que informe sobre el inventario estatal o municipal del sector cunicola o de gallinas de postura.
+Por otra parte, en el estado de Colima, la producción de conejo sólo se conoce mediante las redes sociales, principalmente unos cuantos -- de dos a cinco grupos -- grupos de Facebook, y no se tiene conocimiento de una fuente de datos que informe sobre el inventario estatal o municipal del sector cunicola.
 
 Aunado a lo anterior, ciertamente,  **no se cuenta con una asociación o consejo de la crianza de conejo** en el estado de Colima, cuantimás a nivel municipal.
 
@@ -26,7 +26,9 @@ Aunado a lo anterior, ciertamente,  **no se cuenta con una asociación o consejo
 
 |Frontend||
 |---|:---:|
-|Vainilla Javascript||
+
+|JavaScript||
+
 |CSS||
 
 # Conejería
@@ -53,7 +55,7 @@ Aunado a lo anterior, ciertamente,  **no se cuenta con una asociación o consejo
 ## Concepts
 
 Mating
-When does become receptive to mating, they will usually show signs of being in heat. 
+When a Doe becomes receptive to mating, they will usually show signs of being in heat. 
 
 
 ## User Stories
@@ -70,8 +72,7 @@ Como productor quiero conocer el padrón de criadores de conejos para conocer el
 
 Como productor  quiero comentar las publicaciones de los granjeros para retroalimentar las mejores prácticas de cada uno de los granjeros y porsupuesto felicitarlos.
 
-Como productor quiero contar con un reporte dentro de un periodo de la productividad de la granja.
-
+Como productor quiero contar con un reporte dentro de un periodo específico de la productividad de la granja.
 
 ### Administrator
 Como Administrador es el único que autoriza el registro de productores para controlar quienes son aptos para ser miembros del buen conejo.
