@@ -53,7 +53,7 @@ Aunado a lo anterior, ciertamente,  **no se cuenta con una asociación o consejo
 ## Concepts
 
 Mating
-When does become receptive to mating, they will usually show signs of being in heat. 
+When a Doe becomes receptive to mating, they will usually show signs of being in heat. 
 
 
 ## User Stories
@@ -70,8 +70,7 @@ Como productor quiero conocer el padrón de criadores de conejos para conocer el
 
 Como productor  quiero comentar las publicaciones de los granjeros para retroalimentar las mejores prácticas de cada uno de los granjeros y porsupuesto felicitarlos.
 
-Como productor quiero contar con un reporte dentro de un periodo de la productividad de la granja.
-
+Como productor quiero contar con un reporte dentro de un periodo específico de la productividad de la granja.
 
 ### Administrator
 Como Administrador es el único que autoriza el registro de productores para controlar quienes son aptos para ser miembros del buen conejo.
