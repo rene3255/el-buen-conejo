@@ -26,8 +26,8 @@ Aunado a lo anterior, ciertamente,  **no se cuenta con una asociación o consejo
 
 |Frontend||
 |---|:---:|
-|[React](https://reactjs.org "Reactjs")|![React](https://reactjs.org/favicon.ico "Reactjs")|
-|[MUI](https://mui.com "MUI")|![MUI](https://mui.com/static/favicon.ico "Material UI")|
+|Vainilla Javascript||
+|CSS||
 
 # Conejería
 
