@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% include 'layouts/header.html' %}
+<main>
+  {% for cage in cages %}
+      <div>
+              {{ cage.cage_title}}
+              {% if cage.is_public == True %}
+                 <p> Jaula pública </p>
+              {% else %}
+                <p> Jaula no pública </p>
+              {% endif %}  
+              <p> y tiene {{ cage.rabbits_number }} {{ cage.rabbits_number|pluralize:"conejo,conejos" }}</p>
+      </div>
+  {% endfor %}
+    <script src="{% static 'js/form/form_register.js' %}" type="module" ></script>  
+</main>
+{% include 'layouts/footer.html' %}
+{% endblock %}

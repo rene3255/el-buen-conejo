@@ -1,0 +1,39 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% include 'layouts/header.html' %}
+<main>
+<div>
+   <form  class="form-login" method="post" novalidate>
+      {% csrf_token %}
+      <div class="form-login__header">
+         <h4>Inicia sesión en El buen conejo</h4>
+         <p>¿Aún no tienes cuenta? <a class="link__a" href="register">Regístrate ahora </a></p>
+         {% if error != '' %}
+           <p>{{error}}</p>
+         {% endif %}
+      </div>
+      <div class="form-login__input">
+         <label for="email_username">
+            <h6>Email</h6>
+         </label>
+         {{form.username}}
+      </div>
+      <div class="form-login__input" >
+         <label for="password">
+            <h6>Contraseña</h6>
+         </label>
+         <div class="password-container">
+            {{form.password}}
+            <div class="eye-password-none" id="eye-password"></div>
+         </div> 
+      </div>
+      <button class="btn btn-sm btn-secundary-solid">Iniciar sesión</button>
+      <a class="link__a" href="#">¿Olvidaste la contraseña?</a>
+   </form>
+  </div>
+</main>
+<script src="{% static 'js/form/form_login.js' %}" type="module"></script>    
+{% include 'layouts/footer.html' %}
+{% endblock %}

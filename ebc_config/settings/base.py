@@ -20,13 +20,27 @@ DJANGO_APPS = [
     'django.contrib.staticfiles',
     'django_extensions',
 ]
-EL_BUEN_CONEJO_APPS = ['homepage',]
+EL_BUEN_CONEJO_APPS = [
+    'homepage', 
+    'users_control',
+    'resources',
+    'farms',
+    'cage',
+    'rabbit',
+    'doe',
+    'buck',
+]
 
 THIRD_PARTY_APPS = ['cloudinary',]
 
 INSTALLED_APPS = DJANGO_APPS \
                 + EL_BUEN_CONEJO_APPS \
                 + THIRD_PARTY_APPS 
+
+AUTH_USER_MODEL = "users_control.CustomUser"
+AUTHENTICATION_BACKENDS = ['users_control.backends.EmailBackend']
+
+LOGIN_REDIRECT_URL = 'home'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -79,6 +93,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'OPTIONS': {
+            'min_length': 8,
+        }
     },
     {
         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
@@ -113,9 +130,9 @@ STATICFILES_DIRS = (
 
 )
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
