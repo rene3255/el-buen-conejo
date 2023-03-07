@@ -7,7 +7,7 @@
     max-width: 500px;
     margin: auto;
   }
-  .forn-register__name-last-name{
+  .form-register__name-last-name{
     display: flex;
     gap: 5px;
   }

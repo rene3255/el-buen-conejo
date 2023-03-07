@@ -1,6 +1,6 @@
 from django import forms
 from resources.models import Breed, RabbitStatus
-from rabbit.models import Buck, Doe, Rabbit
+from rabbit.models import Rabbit
 from cage.models import Cage
 from farms.models import ProducerProfile
 from django.core.exceptions import ValidationError

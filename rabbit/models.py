@@ -2,8 +2,6 @@ from django.db import models
 from django.utils.functional import cached_property
 from resources.models import Breed, RabbitStatus
 from cage.models import Cage
-from doe.models import Doe
-from buck.models import Buck
 # Create your models here.
 
 class ActiveRabbitManager(models.Manager):
