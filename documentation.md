@@ -127,6 +127,11 @@ At the end of the last two days the bug was fixed and the knowledgement was supe
 ## 05 Sun Mar
 Yesterday I solved through signals the issue of saving the rabbit entered into the cage field called "rabbits_number".
 So far, I'll be working in the feature to pass automatically the rabbit with status "Buck" or "Does".
+# 07 Tue Mar
+Running the Rabbit template I notice that the observations field is not required when it is created. So I decided to get of from de model.
+
+# 08 Wed Mar
+Was cumbersome day because I couldn't find the solution bad at end o the day I got the solution. I added two boolean fields to Rabbit model. Its function is to switch the status of the rabbit when is assigned as Doe.
 
 
 ## Scripts

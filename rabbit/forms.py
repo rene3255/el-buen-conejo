@@ -26,15 +26,15 @@ class AddRabbitForm(forms.ModelForm):
     rabbit_status = forms.ModelChoiceField(
                             queryset=RabbitStatus.objects.all()
                             )
-    observation = forms.CharField(widget=forms.Textarea)
+    
     class Meta:
         model = Rabbit
         fields = ['breed', 'sex','rabbit_tag',
                   'birth_date', 'weight', 
                   'rabbit_photo', 'rabbit_status',
-                  'observation','cage'
+                  'cage'
                  ]
-        exclude = ('is_active',)
+        exclude = ('is_active','is_doe','is_buck')
         
         
     def clean_weight(self):
