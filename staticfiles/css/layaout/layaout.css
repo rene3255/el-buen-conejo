@@ -38,7 +38,9 @@
     --doe: #91529E;
     --buck: #407C7A;
     --gray: #777777;
-
+    --notUser:#A0AEC0;
+    --card-color:#CCCCCC;
+    --table-th-color:#EEEEEE;
     /* states */ 
     --danger-100: #E53E3E;
     --success-100: #38A169;
@@ -84,6 +86,7 @@
         padding: 0px;
         font-family: 'Manrope';
     }
+ 
     h1,
     h2,
     h3,
@@ -124,6 +127,13 @@
         background-repeat: no-repeat;
         background-size: cover;
     }
+    .icon-geo{
+        width: 16px;
+        height: 16px;
+        background: url(./../../img/icons/icons/general/MapPin.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
     .link__a{
         text-decoration: none;
         color:var(--primary-600);
@@ -134,6 +144,9 @@
     }
     .link__a-without-css{
         text-decoration: none;
+    }
+    .flex{
+        display: flex;
     }
     .footer{
         width: 100%;

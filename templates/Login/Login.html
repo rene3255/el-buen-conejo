@@ -4,6 +4,7 @@
 {% block content %}
 {% include 'layouts/header.html' %}
 <main>
+<div>
    <form  class="form-login" method="post" novalidate>
       {% csrf_token %}
       <div class="form-login__header">
@@ -31,6 +32,7 @@
       <button class="btn btn-sm btn-secundary-solid">Iniciar sesión</button>
       <a class="link__a" href="#">¿Olvidaste la contraseña?</a>
    </form>
+  </div>
 </main>
 <script src="{% static 'js/form/form_login.js' %}" type="module"></script>    
 {% include 'layouts/footer.html' %}

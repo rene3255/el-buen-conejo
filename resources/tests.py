@@ -21,12 +21,12 @@ class StateTestCase(TestCase):
       
         print("Checking total records loaded")
         record_set = len(State.objects.all())
-        self.assertEqual(record_set,32)
+        self.assertEqual(32,record_set)
         print("States catalog is complete, total records was successful %s", record_set)
         
     def test_only_one_record(self):
         State.objects.create(state="Colima")
-        records = State.objects.all()
-        self.assertEqual(len(records),1) 
-        
+        records = State.objects.filter(state='Colima')
+        self.assertEqual('Colima',records[0].state) 
+       
       

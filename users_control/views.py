@@ -1,5 +1,4 @@
 
-from django.shortcuts import render
 from wsgiref.util import request_uri
 from django.shortcuts import render,redirect
 from django.contrib.auth import authenticate,logout,login
@@ -16,13 +15,15 @@ from django.contrib.auth import views as auth_views
 # Create your views here.
 
 def register(request):
+    if request.user.is_authenticated:
+        return redirect('home')
+      
     if request.method == 'GET':
         form=RegisterForm()
         return render(request,'Register/Register.html',{
             'form' : form,'error':''
         })
-    if request.user.is_authenticated:
-        return redirect('home')
+    
 
     form = RegisterForm( data=request.POST)
     if request.method == 'POST' and form.is_valid():
@@ -39,6 +40,8 @@ def register(request):
         })      
 
 def elbuenconejo_login(request):
+    if request.user.is_authenticated:
+        return redirect('home')
     if request.method == 'GET':
         form = LoginForm()
         return render(request,'Login/Login.html',{
@@ -61,20 +64,18 @@ def elbuenconejo_login(request):
         return render(request,'Login/Login.html',{
             'form' : form,'error':'datos incorrectos'
         })          
-'''
-class LoginView(auth_views.LoginView):
-    template_name = 'users_control/login.html'
-    form_class = LoginForm
-'''
 
 def elbuenconejo_logout(request):
-    print(request)
     if not request.user.is_authenticated:
-        
-        return redirect('home')
-    else: 
-        print("Usuario", request.user.username)
+        return render(request,'homepage/homepage.html')
+      
+    if request.method == 'GET':
         logout(request)
+
         messages.success(request,'Salió de sesión exitosamente')
         return redirect('homepage')
           
+
+    
+    return render(request,'homepage/homepage.html')
+

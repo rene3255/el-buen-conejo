@@ -6,7 +6,7 @@ from django.utils.translation import gettext_lazy as _
 
 from .managers import CustomUserManager
 class CustomUser(AbstractBaseUser, PermissionsMixin):
-    username = models.CharField(max_length=20)
+    username = models.CharField(max_length=20, unique=True)
     email = models.EmailField(_("email address"), unique=True)
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
@@ -21,4 +21,14 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     
     def __str__(self):
         return self.email
+  
+class AccessControlManager(models.Manager):
+    def valid_active_user(self, userkey):
+        user_num = self.get(active_user=userkey)
+        return user_num
       
+class AccessControl(models.Model):
+    active_user = models.IntegerField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    objects = AccessControlManager()
+    

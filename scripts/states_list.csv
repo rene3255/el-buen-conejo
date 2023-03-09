@@ -1,33 +1,33 @@
-id,state, updated_at
-1,Aguascalientes, 2023-01-31
-2,Bajacalifornia sur, 2023-01-31
-3,Bajacalifornia, 2023-01-31
-4,Campeche, 2023-01-31
-5,Chihuhua, 2023-01-31
-6,Chiapas, 2023-01-31
-7,Ciudad de México, 2023-01-31
-8,Coahuila, 2023-01-31
-9,Colima, 2023-01-31
-10,Durango, 2023-01-31
-11, Guanajuato, 2023-01-31
-12, Guerrero, 2023-01-31
-13, Hidalgo, 2023-01-31
-14, Jalisco, 2023-01-31
-15, México, 2023-01-31
-16, Michoacán, 2023-01-31
-17, Morelos, 2023-01-31
-18, Nayarit, 2023-01-31
-19, Nuevo León, 2023-01-31
-20, Oaxaca, 2023-01-31
-21, Puebla, 2023-01-31
-22, Queretaro, 2023-01-31
-23, Quintana Roo, 2023-01-31
-24, Tabasco, 2023-01-31
-25, Tamaulipas, 2023-01-31
-26, Tlaxcala, 2023-01-31
-27, San Luis Potosí, 2023-01-31
-28, Sinaloa, 2023-01-31
-29, Sonora, 2023-01-31
-30, Veracruz, 2023-01-31
-31, Yucatán, 2023-01-31
-32, Zacatecas, 2023-01-31
+id,state,created_at
+1,Aguascalientes,2023-01-31
+2,Bajacalifornia sur,2023-01-31
+3,Bajacalifornia,2023-01-31
+4,Campeche,2023-01-31
+5,Chihuhua,2023-01-31
+6,Chiapas,2023-01-31
+7,Ciudad de México,2023-01-31
+8,Coahuila,2023-01-31
+9,Colima,2023-01-31
+10,Durango,2023-01-31
+11,Guanajuato,2023-01-31
+12,Guerrero,2023-01-31
+13,Hidalgo,2023-01-31
+14,Jalisco,2023-01-31
+15,México,2023-01-31
+16,Michoacán,2023-01-31
+17,Morelos,2023-01-31
+18,Nayarit,2023-01-31
+19,Nuevo León,2023-01-31
+20,Oaxaca,2023-01-31
+21,Puebla,2023-01-31
+22,Queretaro,2023-01-31
+23,Quintana Roo,2023-01-31
+24,Tabasco,2023-01-31
+25,Tamaulipas,2023-01-31
+26,Tlaxcala,2023-01-31
+27,San Luis Potosí,2023-01-31
+28,Sinaloa,2023-01-31
+29,Sonora,2023-01-31
+30,Veracruz,2023-01-31
+31,Yucatán,2023-01-31
+32,Zacatecas,2023-01-31

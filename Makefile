@@ -19,3 +19,5 @@ limpia:
 
 test:
 		python manage.py test
+load:
+		python3 manage.py runscript load_states
