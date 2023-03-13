@@ -21,7 +21,6 @@ class AddRabbitForm(forms.ModelForm):
                                  ('H', ('Hembra'))])    
     rabbit_tag = forms.CharField(max_length=30,initial="ebc-")
     birth_date = forms.DateField(required=False)
-    weight = forms.DecimalField(decimal_places=1, max_digits=3, required=False)
     rabbit_photo = forms.ImageField(required=False)
     rabbit_status = forms.ModelChoiceField(
                             queryset=RabbitStatus.objects.all()
@@ -30,7 +29,7 @@ class AddRabbitForm(forms.ModelForm):
     class Meta:
         model = Rabbit
         fields = ['breed', 'sex','rabbit_tag',
-                  'birth_date', 'weight', 
+                  'birth_date',  
                   'rabbit_photo', 'rabbit_status',
                   'cage'
                  ]

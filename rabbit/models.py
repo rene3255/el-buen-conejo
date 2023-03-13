@@ -43,7 +43,6 @@ class Rabbit(models.Model):
                         null=True, blank=True, unique=True
                         )
     birth_date = models.DateField(null=True, blank=True)
-    weight = models.DecimalField(max_digits=3, decimal_places=1, default=0.0)
     rabbit_photo = models.ImageField('Foto del conejo',upload_to="media/rabbits/", default="rabbit_avatar.png",
                                       null=True, blank=True)   
     rabbit_status = models.ForeignKey(RabbitStatus,on_delete=models.CASCADE)

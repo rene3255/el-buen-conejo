@@ -1,7 +1,7 @@
 from django.db import models
 from rabbit.models import Rabbit
 from managers.managers import RecordManager
-
+from cage.models import Cage
 # Create your models here.
 
 class ActiveDoeManager(models.Manager):
@@ -13,6 +13,7 @@ class Doe(models.Model):
     doe_name = models.CharField(max_length=30)
     selection_date = models.DateField(null=True, blank=True)
     doe_rabbit = models.OneToOneField(Rabbit, on_delete=models.CASCADE, null=True, blank=True)
+    cage = models.ForeignKey(Cage, on_delete=models.CASCADE, null=True, blank=True)
     is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
 

@@ -25,7 +25,7 @@ def add_doe(request):
     return render(request,'Doe/AddDoeRabbit.html',
             {
             'form' : form,
-            'error': "Nada or el momento"
+            'error': form.errors
            
             }
     )      
