@@ -71,5 +71,11 @@ def elbuenconejo_logout(request):
       
     if request.method == 'GET':
         logout(request)
+
+        messages.success(request,'Salió de sesión exitosamente')
+        return redirect('homepage')
+          
+
     
     return render(request,'homepage/homepage.html')
+

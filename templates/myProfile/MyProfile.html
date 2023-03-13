@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% include 'layouts/header.html' with path_rute="perfil" %}
+<main>
+    <article class="profile-farmer">
+        <div class="profile-farmer__header">
+            <div class="ejemplo-img profile-user"></div>
+            <h5 >John Doe</h5>
+        </div>
+    </article>
+    <article class="cages-rabbit">
+    </article>
+    <article class="market-rabbit">
+    </article>
+    <article class="video-rabbit">
+    </article>
+</main>
+{% include 'layouts/footer.html' %}
+{% endblock %}

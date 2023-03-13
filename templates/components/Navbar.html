@@ -1,12 +1,24 @@
 <nav class="navbar">
+    {% if user.is_authenticated %}
+    <div class="container-menu">
+        <div class="menu-mobile">
+            <div class="menu-mobile__icon"></div>
+        </div>
+        <a href="home" class="link__a-without-css">
+           <div class="full-logo"></div>
+        </a>   
+    </div>
+    {% else %}
     <div class="container-menu">
         <div class="menu-mobile">
             <div class="menu-mobile__icon"></div>
         </div>
         <a href="homepage" class="link__a-without-css">
            <div class="logo"></div>
-        </a>   
+        </a>  
     </div>
+    {% endif %}
+
     <ul class="menu">
         <li>
             Comunidad
@@ -18,7 +30,30 @@
             Eventos y recurso
         </li>
     </ul>
-
+    {% if user.is_authenticated %}
+    <div class="container-image-user">
+        <div class="container-user-not-img">
+             <div class="user_not_img"></div>
+        </div>
+         <button class="button-input-user-setting">
+             <div class="input-user-setting"></div>
+         </button>
+         <div class="menu-user">
+             <ul>
+                 <li>
+                    <a href="myprofile" class="link__a-without-css">
+                        Mi perfil
+                    </a>  
+                 </li>
+                 <li>
+                    <a href="logout" class="link__a-without-css">
+                        <span class="text-danger">Cerrar sesión</span>
+                    </a>  
+                </li>
+             </ul>
+         </div>
+     </div> 
+    {% else    %}
     <div class="button-login">
         <a href="login" class="link__a-without-css">
             <button class="btn btn-xs btn-primary-none">
@@ -31,5 +66,6 @@
             </button>
         </a>
     </div> 
+    {% endif   %}
   
 </nav> 

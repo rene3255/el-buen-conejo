@@ -1,0 +1,172 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% include 'layouts/header.html' with path_rute="perfil" %}
+<main class='container-profile'>
+    <article class="profile-farmer">
+        <div class="profile-farmer__header">
+            <div class="ejemplo-img profile-user"></div>
+            <h5 >John Doe</h5>
+        </div>
+        <div class='container-profile-menu'>
+            <button class='button-menu-profile active-button-menu-profile' loadElement='cages-rabbit' >Jaulas</button>
+            <button class='button-menu-profile ' loadElement='market-rabbit' >Mercado</button>
+        </div>
+    </article>
+    <article class="market-rabbit">
+        <div class="container-titleProfile">
+            <h6>Conejos que están a la venta</h6>
+        </div>
+      <div class="container-profile-rabbit">
+        <a href="makeDetails">
+            <figure>
+                <img src={% static 'img/slide-home/raza3.png' %}  alt="">
+                <figcaption>
+                    <ul>
+                        <li>Titulo</li>
+                        <li>$000</li>
+                        <li class="flex"><div class="icon-geo"></div> {Ubicacion}</li>
+                    </ul>
+                </figcaption>
+            </figure>
+        </a>
+        <a href="makeDetails">
+            <figure>
+                <img src={% static 'img/slide-home/raza3.png' %}  alt="">
+                <figcaption>
+                    <ul>
+                        <li>Titulo</li>
+                        <li>$000</li>
+                        <li class="flex"><div class="icon-geo"></div> {Ubicacion}</li>
+                    </ul>
+                </figcaption>
+            </figure>
+        </a>
+        <a href="makeDetails">
+            <figure>
+                <img src={% static 'img/slide-home/raza3.png' %}  alt="">
+                <figcaption>
+                    <ul>
+                        <li>Titulo</li>
+                        <li>$000</li>
+                        <li class="flex"><div class="icon-geo"></div> {Ubicacion}</li>
+                    </ul>
+                </figcaption>
+            </figure>
+        </a>
+        <a href="makeDetails">
+            <figure>
+                <img src={% static 'img/slide-home/raza3.png' %}  alt="">
+                <figcaption>
+                    <ul>
+                        <li>Titulo</li>
+                        <li>$000</li>
+                        <li class="flex"><div class="icon-geo"></div></span> {Ubicacion}</li>
+                    </ul>
+                </figcaption>
+            </figure>
+        </a>
+        <a href="makeDetails">
+            <figure>
+                <img src={% static 'img/slide-home/raza3.png' %}  alt="">
+                <figcaption>
+                    <ul>
+                        <li>Titulo</li>
+                        <li>$000</li>
+                        <li class="flex"><div class="icon-geo"></div> <span>{Ubicacion}</span></li>
+                    </ul>
+                </figcaption>
+            </figure>
+        </a>
+        <a href="makeDetails">
+            <figure>
+                <img src={% static 'img/slide-home/raza3.png' %}  alt="">
+                <figcaption>
+                    <ul>
+                        <li>Titulo</li>
+                        <li>$000</li>
+                        <li class="flex"><div class="icon-geo"></div></span> {Ubicacion}</li>
+                    </ul>
+                </figcaption>
+            </figure>
+        </a>
+      </div>
+    </article>
+    <article class="cages-rabbit active-element-profile">
+        <div class="container-titleProfile">
+        <h6>Jaulas públicas de este productor</h6>
+        </div>
+        <div class="container-cage-card">
+            <div class="cage-card">
+                <div class="cage-card-header">
+                    <span class="icon-global"></span> Público
+                </div>
+                <div class="cage-card-body">
+                    {Nombre de la jaula}
+                </div>
+                <div class="cage-card-footer">
+                   <span>
+                    20 conejos
+                   </span>
+                   <span>
+                    Lote: 0001
+                   </span>
+                </div>
+            </div>
+            <div class="cage-card">
+                <div class="cage-card-header">
+                    <span></span> Público
+                </div>
+                <div class="cage-card-body">
+                    {Nombre de la jaula}
+                </div>
+                <div class="cage-card-footer">
+                   <span>
+                    20 conejos
+                   </span>
+                   <span>
+                    Lote: 0001
+                   </span>
+                </div>
+            </div>
+            <div class="cage-card">
+                <div class="cage-card-header">
+                    <span></span> Público
+                </div>
+                <div class="cage-card-body">
+                    {Nombre de la jaula}
+                </div>
+                <div class="cage-card-footer">
+                   <span>
+                    20 conejos
+                   </span>
+                   <span>
+                    Lote: 0001
+                   </span>
+                </div>
+            </div>
+            <div class="cage-card">
+                <div class="cage-card-header">
+                    <span></span> Público
+                </div>
+                <div class="cage-card-body">
+                    {Nombre de la jaula}
+                </div>
+                <div class="cage-card-footer">
+                   <span>
+                    20 conejos
+                   </span>
+                   <span>
+                    Lote: 0001
+                   </span>
+                </div>
+            </div>
+        </div>
+    </article>
+    <article class="market-rabbit">
+    </article>
+    <article class="video-rabbit">
+    </article>
+</main>
+{% include 'layouts/footer.html' %}
+{% endblock %}
