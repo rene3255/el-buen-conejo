@@ -1,6 +1,6 @@
 from django import forms
 from resources.models import Breed, RabbitStatus
-from rabbit.models import Buck, Doe, Rabbit
+from rabbit.models import Rabbit
 from cage.models import Cage
 from farms.models import ProducerProfile
 from django.core.exceptions import ValidationError
@@ -21,20 +21,19 @@ class AddRabbitForm(forms.ModelForm):
                                  ('H', ('Hembra'))])    
     rabbit_tag = forms.CharField(max_length=30,initial="ebc-")
     birth_date = forms.DateField(required=False)
-    weight = forms.DecimalField(decimal_places=1, max_digits=3, required=False)
     rabbit_photo = forms.ImageField(required=False)
     rabbit_status = forms.ModelChoiceField(
                             queryset=RabbitStatus.objects.all()
                             )
-    observation = forms.CharField(widget=forms.Textarea)
+    
     class Meta:
         model = Rabbit
         fields = ['breed', 'sex','rabbit_tag',
-                  'birth_date', 'weight', 
+                  'birth_date',  
                   'rabbit_photo', 'rabbit_status',
-                  'observation','cage'
+                  'cage'
                  ]
-        exclude = ('is_active',)
+        exclude = ('is_active','is_doe','is_buck')
         
         
     def clean_weight(self):

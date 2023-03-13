@@ -9,14 +9,14 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('cage', '0001_initial'),
+        ('doe', '0001_initial'),
         ('farms', '0001_initial'),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='cage',
+            model_name='doe',
             name='farm',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='cages', to='farms.producerprofile'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='does', to='farms.producerprofile'),
         ),
     ]

@@ -26,7 +26,7 @@ def add_rabbit(request):
     return render(request,'Rabbit/AddRabbit.html',
             {
             'form' : form,
-            'error': form.errors.get('weight')
+            'error': form.errors
            
             }
     )      

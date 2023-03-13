@@ -1,5 +1,4 @@
-Conejería
-
+El buen conejo
 
 Preliminary table list
 
@@ -120,14 +119,19 @@ Last week was really nutritive I learned about Model Managers and Validators. Al
 Into the period 21 to 28 feb the project advances consisted databases model rabbit.Some doubts arises from recursive fields between rabbits and mothers rabbits, same for bucks and rabbits.
 
 ## 03 Fri Mar
-Was a frustated day because my partner get off from the ship team. He said  
-that his scholar agenda was shriked. What a shame!
+Was a frustrated day because my partner get off from the ship team. He said  
+that his scholar agenda was shrinked. What a shame!
 
 Well, the last two days were full of learning. Let me explain, I hadn´t find how to resolve an error in the class AddRabbitForm. particularly the Cage field, its ModelChoiceField and each time I filter the cage by a producer or user authenticated it depicted all table content.
-At the end of the last two days the bug was fixed the knowledgement was super.
+At the end of the last two days the bug was fixed and the knowledgement was super.
 ## 05 Sun Mar
 Yesterday I solved through signals the issue of saving the rabbit entered into the cage field called "rabbits_number".
 So far, I'll be working in the feature to pass automatically the rabbit with status "Buck" or "Does".
+# 07 Tue Mar
+Running the Rabbit template I notice that the observations field is not required when it is created. So I decided to get of from de model.
+
+# 08 Wed Mar
+Was cumbersome day because I couldn't find the solution bad at end o the day I got the solution. I added two boolean fields to Rabbit model. Its function is to switch the status of the rabbit when is assigned as Doe.
 
 
 ## Scripts
