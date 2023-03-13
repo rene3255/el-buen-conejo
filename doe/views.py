@@ -32,8 +32,8 @@ def add_doe(request):
 
 @login_required(login_url='login')
 def does_list(request):
-    does = Doe.objects.register_active().filter()
-    print(does)
+    does = Doe.objects.register_active().filter(doe_rabbit__cage__farm=request.user.id)
+    print("HEMBRAS ",does)
     if not does:
         print("Nothing")
         return redirect('home')
