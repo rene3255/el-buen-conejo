@@ -29,9 +29,14 @@ EL_BUEN_CONEJO_APPS = [
     'rabbit',
     'doe',
     'buck',
+    'diary',
 ]
 
-THIRD_PARTY_APPS = ['cloudinary',]
+THIRD_PARTY_APPS = [
+              'cloudinary',
+              # Django REST framework
+              'rest_framework',
+]
 
 INSTALLED_APPS = DJANGO_APPS \
                 + EL_BUEN_CONEJO_APPS \
@@ -111,7 +116,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/New_York'
 
 USE_I18N = True
 
