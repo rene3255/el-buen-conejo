@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% include 'layouts/header.html' %}
+<main>
+   <form  class="form-add-rabbit" method="post" enctype="multipart/form-data" novalidate>
+      {% csrf_token %}
+      <div>
+       <div class="form-rabbit__header">
+         <h4>Diario del productor</h4>
+         {% if error != '' %}
+           <p>{{error}}</p>
+         {% endif %}
+      </div>
+
+      <div class="form-rabbit__input">
+         <label for="activity_date">
+            <h6>Fecha</h6>
+         </label>
+         {{ form.activity_date }}
+      </div>
+      <div class="form-rabbit__input">
+        <label for="activity">
+           <h6>Descripción de la actividad</h6>
+        </label>
+        {{ form.activity }}
+      </div>
+      <div class="form-rabbit__input">
+        <label for="costs">
+          <h6>Costos</h6>
+        </label>
+        {{ form.costs }}
+      </div>
+      <input type="submit">
+    </div>
+    </form>
+</main>
+<script src="{% static 'js/form/form_login.js' %}" type="module"></script>    
+{% include 'layouts/footer.html' %}
+{% endblock %}

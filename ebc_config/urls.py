@@ -12,5 +12,6 @@ urlpatterns = [
     path('', include('rabbit.urls')),
     path('', include('doe.urls')),
     path('', include('buck.urls')),
+    path('', include('diary.urls')),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
