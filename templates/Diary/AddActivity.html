@@ -3,6 +3,7 @@
 {% block content %}
 {% include 'layouts/header.html' %}
 <main>
+
    <form  class="form-add-rabbit" method="post" enctype="multipart/form-data" novalidate>
       {% csrf_token %}
       <div>
@@ -12,7 +13,56 @@
            <p>{{error}}</p>
          {% endif %}
       </div>
+      
+      <div>
+        {% if last_activity %}
+          <table>
+            {% for activity in last_activity %}
+              {% if forloop.first %}
+                <thead>
+                  <tr>
+                    <th>Fecha</th>
+                    <th>Actividad</th>
+                    <th>Costo</th>
+                  </tr>
+                </thead> 
+                <tbody>     
+                  <tr>
+                    <td>
+                      {{ activity.activity_date }}
+                    </td> 
+                    <td>
+                      {{ activity.activity }}
+                    </td>  
+                    <td>
+                      {{ activity.costs }}
+                    </td>  
+                    
+                  </tr>  
+                </tbody>    
+              {% else %}
+                <tbody>     
+                  <tr>
+                    <td>
+                      {{ activity.activity_date }}
+                    </td> 
+                    <td>
+                      {{ activity.activity }}
+                    </td>  
+                    <td>
+                      {{ activity.costs }}
+                    </td>  
 
+                  </tr>  
+                </tbody>    
+              {% endif %}   
+            {% endfor %}  
+          </table>
+        {% endif %}  
+
+        
+
+      </div>
       <div class="form-rabbit__input">
          <label for="activity_date">
             <h6>Fecha</h6>
@@ -33,7 +83,12 @@
       </div>
       <input type="submit">
     </div>
+    
     </form>
+
+    
+  
+    
 </main>
 <script src="{% static 'js/form/form_login.js' %}" type="module"></script>    
 {% include 'layouts/footer.html' %}

@@ -138,3 +138,14 @@ Was cumbersome day because I couldn't find the solution bad at end o the day I g
 python3 manage.py runscript load_states
 TRUNCATE TABLE resources_state RESTART IDENTITY CASCADE;
 \COPY farms_producerprofile to 'produces.csv' csv header
+
+{% for item in items %}
+    {% ifchanged %}
+        {% if forloop.first %}
+            <p>This is the first item in the list!</p>
+        {% else %}
+            <p>This is a new item in the list!</p>
+        {% endif %}
+    {% endifchanged %}
+    <p>{{ item.name }}</p>
+{% endfor %}
