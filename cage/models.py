@@ -41,8 +41,11 @@ class Cage(models.Model):
     is_public = models.BooleanField(choices=CAGE_PUBLIC, 
                                  default=CAGE_PUBLIC[1][0])
     details = models.CharField(max_length=255,null=True, blank=True)
-    cage_photo =  models.ImageField('Producer profile',upload_to="media/",
+    cage_photo =  models.ImageField('Producer profile',upload_to="media/cage",
+                                    default="cage_avatar.png",
                                       null=True, blank=True)   
+                # upload_to="media/rabbits/", default="rabbit_avatar.png",
+                #                      null=True, blank=True)
     farm = models.ForeignKey(ProducerProfile, on_delete=models.CASCADE, related_name="cages")
     created_at = models.DateTimeField(auto_now_add=True)
     is_active = models.BooleanField(default=True)

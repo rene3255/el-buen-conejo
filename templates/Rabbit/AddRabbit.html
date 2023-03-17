@@ -10,7 +10,7 @@
          <h4>Registro de conejos</h4>
          {% if error != '' %}
             {% if error.rabbit_tag %}
-                <p>Un conejo con este arete ya se gistro antes</p>
+                <p>Un conejo con ese arete o etiqueta ya se gistro antes</p>
             {%endif %} 
             {% if error.rabbit_photo %}
                 <p>Por favor ingrese una foto del rabbit</p>
@@ -33,7 +33,7 @@
       </div>
       <div class="form-rabbit__input">
         <label for="rabbit_tag">
-          <h6>Etiqueta</h6>
+          <h6>Etiqueta o Arete</h6>
         </label>
         {{ form.rabbit_tag }}
       </div>
