@@ -1,0 +1,31 @@
+id,activity_date,activity,costs,is_active,created_at,farm_id
+1,2023-01-28,Se adquirió semental de la raza nueva zelanda.,750.00,t,2023-03-15,1
+2,2023-02-12,Se alimentó con guasima a toda la madriguera.,0.00,t,2023-03-15,1
+3,2023-02-12,Se dió vitamina C en el agua al semental EBAY.,0.00,t,2023-03-15,1
+4,2023-03-01,Parió la hembra que esta en la jaula no. 3,0.00,t,2023-03-15,1
+5,2023-03-02,"Se cruzó la hembra de la jaula no. 2, es una hembra de color blanco.",0.00,t,2023-03-15,1
+6,2023-03-03,La hembra de la jaula no.1  esta construyendo el nido.,0.00,t,2023-03-15,1
+7,2023-03-03,Se recolectaron 6 huevos,0.00,t,2023-03-15,1
+8,2023-03-04,Adquisición de una costal de alimento para gallina ponedora marca Alipec.,0.00,t,2023-03-15,1
+9,2023-03-04,Adquisición de un costal de alimento para conejo marca Nogal.,445.00,t,2023-03-15,1
+10,2023-03-04,Se compró una paca de paja de arroz.,95.00,t,2023-03-15,1
+11,2023-03-05,Se movieron las jaulas de las gallinas para sanitizar la ubicación anterior.,0.00,t,2023-03-15,1
+12,2023-03-06,Se dio de comer a los conejos y gallinas sin observaciones.,0.00,t,2023-03-15,1
+13,2023-03-09,"Se dio guasima a los conejos, se colocó una jaula tipo horno de microondas, se cosecharon tres huevos. Habrá que comprar veneno: se notó un roedor a simple vista.",0.00,t,2023-03-15,1
+14,2023-03-09,Niria me prestó para comprar la sierra para la cortadora,750.00,t,2023-03-15,1
+15,2023-03-10,"Desayuné bien, no hubo ingesta de tortillas. Gracias a Dios.",0.00,t,2023-03-15,1
+16,2023-03-10,Se colocó un nido en la Jaula No. 2. Es la jaula adonde están dos conejas. La coneja de color blanco está preñanda.,0.00,t,2023-03-15,1
+17,2023-03-11,Parió la hembra que esta en la Jaula No. 1,0.00,t,2023-03-15,1
+18,2023-03-12,Parió la hembra que está en la jaula Naranja.,0.00,t,2023-03-15,1
+19,2023-03-12,Se recolectaron 9 huevos.,0.00,t,2023-03-15,1
+20,2023-03-13,La hembra de la Jaula 10 comenzó hacer su nido.,0.00,t,2023-03-15,1
+21,2023-03-13,"Se contaron los gazapos de la hembra de la jaula no. 3, dando un total de 9 gazapos. Por cierto, ya abrieron sus ojos.",0.00,t,2023-03-15,1
+22,2023-03-13,La gallina en el primer nido elevado junto a la barda tuvo un pollito.,0.00,t,2023-03-15,1
+23,2023-03-13,La gallina en el segundo nido elevado junto a la barda tuvo tres pollitos.,0.00,t,2023-03-15,1
+24,2023-03-14,Se transfirió a Niria el pago de las dos sierras para la cortadora.,750.00,t,2023-03-15,1
+25,2023-03-14,Se recolectaron 5 huevos.,0.00,t,2023-03-15,1
+26,2023-03-14,Se dio de comer guasima a todos los conejos.,0.00,t,2023-03-15,1
+27,2023-03-14,Se reubicó a la gallina que tuvo tres pollitos en la jaula de madera con malla gallinera para protegerlos.,0.00,t,2023-03-15,1
+28,2023-03-15,"Le transferí $2,000.00 pesos a Niria para obtener efectivo y darle a mis papás $1,000.00",2000.00,t,2023-03-15,1
+29,2023-03-15,"Niria me dio el efectivo, sólo le falta darme $500.00 pesos.",1500.00,t,2023-03-15,1
+30,2023-03-15,Se dió de comer a los conejos hojas de elote y algunas hojas de lechuga y guayabas. A las gallinas también se les dio hojas de lechuga.,0.00,t,2023-03-15,1

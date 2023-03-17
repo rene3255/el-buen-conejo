@@ -22,7 +22,14 @@ class DoeRabbitManager(models.Manager):
         #print("The result: ",fetch_rebbit_status.id)
         return super(DoeRabbitManager,
                   self).get_queryset().filter(rabbit_status__status='Doe', is_active=True, is_doe=False)
-    
+
+class BuckRabbitManager(models.Manager):
+    def get_queryset(self):
+        #fetch_rebbit_status = RabbitStatus.objects.get(status='Doe')
+        #print("The result: ",fetch_rebbit_status.id)
+        return super(BuckRabbitManager,
+                  self).get_queryset().filter(rabbit_status__status='Buck', is_active=True, is_buck=False)
+        
       
 class Rabbit(models.Model):
     
@@ -57,6 +64,7 @@ class Rabbit(models.Model):
     active_rabbit = ActiveRabbitManager()
     male_rabbit = MaleRabbitManager()
     fetch_doe_rabbits = DoeRabbitManager()
+    fetch_buck_rabbits = BuckRabbitManager()
     
     class Meta:
           verbose_name = "Rabbit"
