@@ -15,5 +15,7 @@ class CageConfig(AppConfig):
             cage = Cage.objects.get(id=instance.cage.id)
             cage.rabbits_number +=1
             cage.save()
+        
+        
          
           

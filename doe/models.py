@@ -10,7 +10,7 @@ class ActiveDoeManager(models.Manager):
                   self).get_queryset().filter(is_active=True)
         
 class Doe(models.Model):
-    doe_name = models.CharField(max_length=30)
+    doe_name = models.CharField(max_length=50)
     selection_date = models.DateField(null=True, blank=True)
     doe_rabbit = models.OneToOneField(Rabbit, on_delete=models.CASCADE, null=True, blank=True)
     is_active = models.BooleanField(default=True)
