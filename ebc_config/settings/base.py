@@ -30,6 +30,7 @@ EL_BUEN_CONEJO_APPS = [
     'doe',
     'buck',
     'diary',
+    'mating',
 ]
 
 THIRD_PARTY_APPS = [
