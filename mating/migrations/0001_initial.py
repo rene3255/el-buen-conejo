@@ -9,24 +9,21 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('rabbit', '0001_initial'),
+        ('doe', '0001_initial'),
+        ('buck', '0002_initial'),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Doe',
+            name='Mating',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('doe_name', models.CharField(max_length=50)),
-                ('selection_date', models.DateField(blank=True, null=True)),
+                ('comments', models.TextField(blank=True, default='')),
+                ('vote', models.IntegerField(choices=[(0, 'NINGUNA'), (1, 'UNA'), (2, 'DOS'), (3, 'TRES'), (4, 'CUATRO'), (5, 'CINCO')], default=0, verbose_name='stars')),
                 ('is_active', models.BooleanField(default=True)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('doe_rabbit', models.OneToOneField(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='rabbit.rabbit')),
+                ('buck', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='buck.buck')),
+                ('doe', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='doe.doe')),
             ],
-            options={
-                'verbose_name': 'Doe',
-                'verbose_name_plural': 'Does',
-                'default_manager_name': 'objects',
-            },
         ),
     ]

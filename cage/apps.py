@@ -13,7 +13,9 @@ class CageConfig(AppConfig):
         def update_rabbit_number(sender,instance, **kwargs):
             from .models import Cage
             cage = Cage.objects.get(id=instance.cage.id)
-            cage.rabbits_number +=1
+            num_rabbits = cage.rabbits_number
+            cage.rabbits_number = num_rabbits + 1
+            num_rabbits = 0
             cage.save()
         
         

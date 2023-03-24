@@ -133,11 +133,17 @@ Running the Rabbit template I notice that the observations field is not required
 # 08 Wed Mar
 Was cumbersome day because I couldn't find the solution bad at end o the day I got the solution. I added two boolean fields to Rabbit model. Its function is to switch the status of the rabbit when is assigned as Doe.
 
+# 23 Thu Mar
 
+I got and error when I tried to run out a unnitest Mating module. Now, I'm going to clear all migrations and drop an create database.
+Eureka! I find the solution, the error was in the model rabbit concretly field Sex. It is an obligatory field, so I setting in the query sentences. 
 ## Scripts
 python3 manage.py runscript load_states
 TRUNCATE TABLE resources_state RESTART IDENTITY CASCADE;
 \COPY farms_producerprofile to 'produces.csv' csv header
+
+
+find . -path "*/migrations/*.py" -not -name "__init__.py" -delete
 
 {% for item in items %}
     {% ifchanged %}

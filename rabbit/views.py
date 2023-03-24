@@ -13,12 +13,10 @@ def add_rabbit(request):
         
         if form.is_valid():
             valid_producer = ProducerProfile.producers.get(id=request.user.id)
-            print(form.cleaned_data)
             if valid_producer:
                 form.save()
                 return redirect('home')
-            else: 
-                print("Valor de cage",form.cage)  
+            
     else:
         user_id = ProducerProfile.objects.get(producer=request.user.id)
         form=AddRabbitForm(request=request)
@@ -35,9 +33,8 @@ def add_rabbit(request):
 def rabbits_list(request):
     rabbits = Rabbit.active_rabbit.filter(cage__farm=request.user.id)
     if not rabbits:
-        print("Nothing")
         return redirect('home')
-    print("There are to many rabbits")  
+        
     context = {"rabbits": rabbits}
     return render(request, 'rabbit/RabbitList.html', context )
   

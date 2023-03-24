@@ -11,9 +11,9 @@ def add_buck(request):
     if request.method == 'POST':
         form = AddBuckForm(request.POST, request.FILES)
       
-        print("BINGO")  
         if form.is_valid():
             valid_producer = ProducerProfile.producers.get(id=request.user.id)
+            
             if valid_producer:
                 form.save()
                 return redirect('home')
@@ -32,7 +32,7 @@ def add_buck(request):
 @login_required(login_url='login')
 def bucks_list(request):
     bucks = Buck.objects.register_active().filter(buck_rabbit__cage__farm=request.user.id)
-    print("SEMENTALES ", bucks)
+    
     if not bucks:
         return redirect('home')
     context = {"bucks": bucks}

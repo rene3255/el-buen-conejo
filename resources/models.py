@@ -26,7 +26,7 @@ class City(models.Model):
         return self.city
 
 class Breed(models.Model):
-    breed = models.CharField(max_length=30)
+    breed = models.CharField(max_length=80)
     created_at = models.DateTimeField(auto_now_add=True)    
     
     class Meta:
@@ -38,7 +38,7 @@ class Breed(models.Model):
         return self.breed    
 
 class RabbitStatus(models.Model):
-    status = models.CharField(max_length=30)
+    status = models.CharField(max_length=80)
     created_at = models.DateTimeField(auto_now_add=True)
     
     class Meta:
