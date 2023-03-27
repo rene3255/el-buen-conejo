@@ -55,7 +55,7 @@ class Rabbit(models.Model):
     rabbit_status = models.ForeignKey(RabbitStatus,on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     
-    cage = models.ForeignKey(Cage, on_delete=models.CASCADE, null=True, blank=True)
+    cage = models.ForeignKey(Cage, on_delete=models.CASCADE)
     is_doe = models.BooleanField(default=False)
     is_buck = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)

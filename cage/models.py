@@ -37,7 +37,7 @@ class Cage(models.Model):
     
     cage_title = models.CharField(max_length=50, unique=True)
     batch_number = models.PositiveIntegerField(null=True, blank=True)
-    rabbits_number = models.PositiveIntegerField(default=0, null=True, blank=True)
+    rabbits_number = models.PositiveIntegerField(default=0)
     is_public = models.BooleanField(choices=CAGE_PUBLIC, 
                                  default=CAGE_PUBLIC[1][0])
     details = models.CharField(max_length=255,null=True, blank=True)

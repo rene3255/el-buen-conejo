@@ -142,6 +142,7 @@ python3 manage.py runscript load_states
 TRUNCATE TABLE resources_state RESTART IDENTITY CASCADE;
 \COPY farms_producerprofile to 'produces.csv' csv header
 
+SELECT cage_title, count(*) FROM cage_cage INNER JOIN rabbit_rabbit ON cage_cage.id = rabbit_rabbit.cage_id group by cage_title;
 
 find . -path "*/migrations/*.py" -not -name "__init__.py" -delete
 
