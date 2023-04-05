@@ -10,12 +10,18 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('farms', '0001_initial'),
-        ('diary', '0001_initial'),
+        ('rabbit', '0001_initial'),
+        ('doe', '0001_initial'),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='diary',
+            model_name='doe',
+            name='doe_rabbit',
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='rabbit.rabbit'),
+        ),
+        migrations.AddField(
+            model_name='doe',
             name='farm',
             field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='farms.producerprofile'),
         ),

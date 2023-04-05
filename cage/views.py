@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
 from cage.forms import AddCageForm
 from cage.models import Cage
+from rabbit.models import Rabbit
 from django.db.models import Count, F, Value
 from farms.models import ProducerProfile
 import os
@@ -40,8 +41,11 @@ def delete_cage(request,id):
   
 def cages_list(request):
     print("user activo: %s" % request.user.id)
-    cage_resultset = Cage.cages.list_cages().filter(farm=request.user.id)
+    rabbits_per_cage = \
+        Cage.objects.filter(farm=request.user.id, is_active=True).\
+            annotate(rabbit_count=Count('rabbit')).\
+            values('cage_title','rabbit_count')
     return render(request,
                   "Cage/CagesList.html",
-                  {'cages':cage_resultset})
+                  {'cages':rabbits_per_cage})
    

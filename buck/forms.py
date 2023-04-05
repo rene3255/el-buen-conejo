@@ -15,7 +15,7 @@ class AddBuckForm(forms.ModelForm):
     class Meta:
         model = Buck
         fields = ['buck_name', 'buck_rabbit', 'selection_date']
-        exclude = ('is_active',)
+        exclude = ('is_active','farm')
         
         
           

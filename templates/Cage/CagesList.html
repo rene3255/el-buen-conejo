@@ -11,7 +11,7 @@
               {% else %}
                 <p> Jaula no pública </p>
               {% endif %}  
-              <p> y tiene {{ cage.rabbits_number }} {{ cage.rabbits_number|pluralize:"conejo,conejos" }}</p>
+              <p> y tiene {{ cage.rabbit_count }} {{ cage.rabbit_count|pluralize:"conejo,conejos" }}</p>
       </div>
   {% endfor %}
     <script src="{% static 'js/form/form_register.js' %}" type="module" ></script>  

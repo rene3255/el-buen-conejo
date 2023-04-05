@@ -18,27 +18,21 @@
            </label>
            {{ form.cage_title }} 
         </div>
+
         <div class="form-register__first-name">
-          <label for="batch-number">
-             <h6>Número de lote</h6>
+          <label for="is-public">
+            <h6>¿Jaula pública?</h6>
           </label>
-          {{ form.batch_number }} 
-       </div>
+          {{ form.is_public }} 
+        </div>
+        <div class="form-register__first-name">
+          <label for="photo">
+            <h6>Foto de la jaula</h6>
+          </label>
+          {{ form.cage_photo }} 
+        </div>
 
-       <div class="form-register__first-name">
-        <label for="is-public">
-           <h6>¿Jaula pública?</h6>
-        </label>
-        {{ form.is_public }} 
-       </div>
-       <div class="form-register__first-name">
-        <label for="photo">
-           <h6>Foto de la jaula</h6>
-        </label>
-        {{ form.cage_photo }} 
-       </div>
-
-       <input type="submit">
+        <input type="submit">
       </form>
     <script src="{% static 'js/form/form_register.js' %}" type="module" ></script>  
 </main>

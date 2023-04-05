@@ -10,14 +10,21 @@ from rabbit.models import Rabbit
 def add_doe(request):
     if request.method == 'POST':
         form = AddDoeForm(request.POST, request.FILES)
-      
         
         if form.is_valid():
+            
             valid_producer = ProducerProfile.producers.get(id=request.user.id)
             if valid_producer:
                
-                form.save()
-                return redirect('home')
+                doe = form.save(commit=False)    
+                doe.farm =valid_producer
+                
+                already_doe_name_exist = Doe.objects.filter(doe_name=doe.doe_name).first()
+                if not already_doe_name_exist:
+                    form.save()
+                    return redirect('home')
+                else:
+                  form.add_error('doe_name','Already exists that doe name')  
             
     else:
         form=AddDoeForm()
