@@ -15,6 +15,8 @@ def add_buck(request):
             valid_producer = ProducerProfile.producers.get(id=request.user.id)
             
             if valid_producer:
+                buck= form.save(commit=False)
+                buck.farm = valid_producer
                 form.save()
                 return redirect('home')
             

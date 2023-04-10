@@ -15,7 +15,7 @@ class AddDoeForm(forms.ModelForm):
     class Meta:
         model = Doe
         fields = ['doe_name', 'doe_rabbit', 'selection_date']
-        exclude = ('is_active',)
+        exclude = ('is_active','farm')
         
         
           

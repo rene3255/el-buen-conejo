@@ -9,8 +9,6 @@ class AddCageForm(forms.ModelForm):
                  widget=forms.TextInput(
                  attrs={'class': 'form-control'})
                 )
-    
-    batch_number = forms.IntegerField(label='No. de Lote', initial=1)
     is_public = forms.ChoiceField(label="Jaula Pública o Privada", choices=[(True, ('Si')), (False, ('No'))])
     cage_photo = forms.ImageField(label="Upload", required=False)
     
@@ -26,9 +24,14 @@ class AddCageForm(forms.ModelForm):
     class Meta:
       
         model = Cage
-        fields = ['cage_title', 'batch_number', 
+        fields = ['cage_title',
                   'is_public', 'cage_photo'
         ]
-        exclude = ('farm', 'is_active','rabbits_number',)
+        exclude = (
+                  'farm', 
+                  'is_active',
+                  'rabbits_number',
+                  'batch_number',
+                  )
         
     

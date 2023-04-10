@@ -62,6 +62,9 @@
 }
 .container-home-rabbit figure{
   margin: 0px;
+  background: var(--white-cero);
+  border: 1px solid var(--card-color);
+  border-radius: 4px;
 }
 .container-home-rabbit figcaption{
     width: 100%;
@@ -69,7 +72,7 @@
     margin: 0px;
 }
 .container-home-rabbit img{
-    width: 99%;
+    width: 100%;
 }
 .container-user-not-img{
     height: 32px;
