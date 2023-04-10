@@ -137,6 +137,16 @@ Was cumbersome day because I couldn't find the solution bad at end o the day I g
 
 I got and error when I tried to run out a unnitest Mating module. Now, I'm going to clear all migrations and drop an create database.
 Eureka! I find the solution, the error was in the model rabbit concretly field Sex. It is an obligatory field, so I setting in the query sentences. 
+
+## 09 Sun Apr
+The mating model was successfully finished, although I believe is is important validate the mating date plus 45 days after mating. So, I'll do that functionality but first the test driven development.
+In detail, I must verify any duplicate field in relation with matting records. Let's see:
+  the field already exists:
+    if doe_name and buck_name exist and
+    if Mating date + 45 days > mating date entered then can be added to the database.
+     
+
+
 ## Scripts
 python3 manage.py runscript load_states
 TRUNCATE TABLE resources_state RESTART IDENTITY CASCADE;

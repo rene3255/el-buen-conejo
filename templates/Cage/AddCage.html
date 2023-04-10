@@ -3,29 +3,30 @@
 {% block content %}
 {% include 'layouts/header.html' %}
 <main>
-    <form  method="post" enctype="multipart/form-data">
+    <form class="form-add-rabbit" method="post" enctype="multipart/form-data">
       {% csrf_token %}
-        <div class="form-register__header">
+      <div>
+        <div class="form-rabbit__header">
            <h4>Crear Jaula</h4>
            <span>Primero crea una jaula para luego agregar sus conejos</span> <br>
            {% if error != '' %}
               <p>{{ error }}</p>
            {% endif %}
         </div>
-        <div class="form-register__first-name">
+        <div class="form-rabbit__input">
            <label for="cage-title">
               <h6>Título</h6>
            </label>
            {{ form.cage_title }} 
         </div>
 
-        <div class="form-register__first-name">
+        <div class="form-rabbit__input">
           <label for="is-public">
             <h6>¿Jaula pública?</h6>
           </label>
           {{ form.is_public }} 
         </div>
-        <div class="form-register__first-name">
+        <div class="form-rabbit__input">
           <label for="photo">
             <h6>Foto de la jaula</h6>
           </label>
@@ -33,6 +34,7 @@
         </div>
 
         <input type="submit">
+      </div>
       </form>
     <script src="{% static 'js/form/form_register.js' %}" type="module" ></script>  
 </main>

@@ -42,7 +42,7 @@ class MatingTestCase(TestCase):
         print("Disconnect from database Mating")
     
     def test_mating_database_exists(self):
-        self.mating = Mating.objects.create(buck=self.buck, doe=self.doe)
+        self.mating = Mating.objects.create(buck=self.buck, doe=self.doe, observations="Demo", mating_succeeded=True, farm=self.farm)
         self.assertEqual(self.city.state.state, "Venus")
         self.assertEqual(self.city.city, "Berniaka")
         self.assertEqual(self.producer.username, "Juananona")

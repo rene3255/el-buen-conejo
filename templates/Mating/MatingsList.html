@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% include 'layouts/header.html' %}
+<main>
+
+  {% for mating in matings %}
+      <div>
+         {{ mating.buck }}
+         {{ mating.doe }}
+         {{ mating.mating_date }}
+      </div>
+  {% endfor %}
+    <script src="{% static 'js/form/form_register.js' %}" type="module" ></script>  
+</main>
+{% include 'layouts/footer.html' %}
+{% endblock %}

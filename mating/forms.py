@@ -8,17 +8,22 @@ from django.core.exceptions import ValidationError
 class AddMatingForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):   
         super().__init__(*args, **kwargs)
-        self.fields['doe_name'] = forms.ModelChoiceField(queryset=Doe.fetch_doe_name)
-        self.fields['buck_name'] = forms.ModelChoiceField(queryset=Buck.fetch_buck_name)
-    comments = forms.CharField(
+        self.fields['doe'] = forms.ModelChoiceField(queryset=Doe.objects.all())
+        self.fields['buck'] = forms.ModelChoiceField(queryset=Buck.objects.all())
+    
+    observations = forms.CharField(
                 widget=forms.Textarea(attrs={'rows': 3, 'cols': 40})
                )
     mating_date = forms.DateField(required=False)
-          
+    mating_succeeded = forms.ChoiceField(label="Monta exitosa", choices=[(True, ('Si')), (False, ('No'))])      
     class Meta:
-        model = Doe
-        fields = ['doe_name', 'doe_rabbit', 'mating_date']
-        exclude = ('is_active',)
+        model = Mating
+        fields = ['doe', 'buck',
+                  'observations',
+                  'mating_date',
+                  'mating_succeeded']
+        
+        exclude = ('is_active','farm',)
         
         
           

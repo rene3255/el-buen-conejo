@@ -13,5 +13,6 @@ urlpatterns = [
     path('', include('doe.urls')),
     path('', include('buck.urls')),
     path('', include('diary.urls')),
+    path('', include('mating.urls')),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
