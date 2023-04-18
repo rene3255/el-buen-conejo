@@ -7,14 +7,6 @@ import datetime
 
 # Create your models here.
 
-class RabbitTagTemplate:
-    def __init__(self, 
-                 farm_name, 
-                 model_id, model_id_length=3):
-        self.farm_name = farm_name,
-        self.model_id = model_id
-        self.model_id_length = model_id_length
-        
 class ActiveRabbitManager(models.Manager):
     def get_queryset(self):
         return super(ActiveRabbitManager,
@@ -67,35 +59,11 @@ class Rabbit(models.Model):
     male_rabbit = MaleRabbitManager()
     fetch_doe_rabbits = DoeRabbitManager()
     fetch_buck_rabbits = BuckRabbitManager()
-    
-    
-    def formatted_id_number(self,number):
-        number_length = len(str(number))
-        my_number = list(str(number))
-        my_new_list = ['0','0','0']
-
-        if number_length == 1:
-            my_new_list[2] = my_number[0]
-            
-        if number_length == 2:
-            my_new_list[2] = my_number[1]
-            my_new_list[1] = my_number[0]
-        if number_length == 3:
-            my_new_list[0] = my_number[0]
-            my_new_list[1] = my_number[1]
-            my_new_list[2] = my_number[2]
-            
-        result = "".join(my_new_list) 
         
-        return result
-
     @property
     def rabbit_tag(self):
-        rabbit_tag = RabbitTagTemplate(self.farm.farm_name,3)
-       # str_tag=''
-       # for char in self.farm.farm_name:
-       #     if  char != ' ':
-       #         str_tag += ''.join(char) 
+        rabbit_tag = RabbitTagTemplate(self.farm.farm_name,self.id)
+        print(rabbit_tag.build_rabbit_tag()) 
         return rabbit_tag.build_rabbit_tag() # f"{str_tag[:4]}-{self.formatted_id_number(self.id)}"
       
 
