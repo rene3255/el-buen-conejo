@@ -36,3 +36,4 @@ class RabbitTestCase(TestCase):
         response = self.client.get("//add-rabbit")
         self.assertEqual(response.status_code, 200)
         
+        

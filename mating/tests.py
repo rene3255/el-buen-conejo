@@ -11,6 +11,7 @@ from mating.models import Mating
 from rabbit.models import Rabbit
 from resources.models import Breed, City, RabbitStatus, State
 from users_control.models import CustomUser
+from datetime import date, timedelta
 
 # Create your tests here.
 
@@ -49,8 +50,8 @@ class MatingTestCase(TestCase):
         self.assertEqual(self.buck.buck_name,"Apolo")
         self.assertEqual(self.doe.doe_name,"Clara Chia")
         self.assertTrue(self.mating)
-        myresult = []
-        myresult = list(Mating.objects.all())
+        #myresult = []
+        #myresult = list(Mating.objects.all())
         my_query_set = Mating.objects.all()
         my_json = serializers.serialize('json',my_query_set)
         my_data = json.loads(my_json)
@@ -58,3 +59,15 @@ class MatingTestCase(TestCase):
             if item['fields']:
               print(item['fields']) 
               break
+    
+    def test_mating_date_versus_new_matings(self):
+        passes = True
+        mating_date_field  = date.today()
+        print("Mating Date Test",mating_date_field)
+        weaning_field_date = mating_date_field + timedelta(days=50)
+        print("Mating Date Test",weaning_field_date)
+        self.assertLess(mating_date_field, weaning_field_date)
+        print("TEST SUCCEEDED...")
+        
+
+    

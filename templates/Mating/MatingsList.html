@@ -9,6 +9,12 @@
          {{ mating.buck }}
          {{ mating.doe }}
          {{ mating.mating_date }}
+         {% if mating.mating_succeeded %}
+            Monta Exitosa {{ mating.mating_approved }}
+         {%else %}   
+           Monta fallida
+         {% endif%}   
+         
       </div>
   {% endfor %}
     <script src="{% static 'js/form/form_register.js' %}" type="module" ></script>  

@@ -6,15 +6,18 @@ from django.core.exceptions import ValidationError
 
 
 class AddMatingForm(forms.ModelForm):
-    def __init__(self, *args, **kwargs):   
+    def __init__(self, *args, **kwargs):
+        self.user = kwargs.pop('user', None)
+        request = kwargs.pop('request', None) 
         super().__init__(*args, **kwargs)
-        self.fields['doe'] = forms.ModelChoiceField(queryset=Doe.objects.all())
-        self.fields['buck'] = forms.ModelChoiceField(queryset=Buck.objects.all())
-    
+        self.fields['doe'] = forms.ModelChoiceField(queryset=Doe.objects.filter(farm=request.user.id))
+        self.fields['buck'] = forms.ModelChoiceField(queryset=Buck.objects.filter(farm=request.user.id))
+        
+        
     observations = forms.CharField(
                 widget=forms.Textarea(attrs={'rows': 3, 'cols': 40})
                )
-    mating_date = forms.DateField(required=False)
+    mating_date = forms.DateField(required=True)
     mating_succeeded = forms.ChoiceField(label="Monta exitosa", choices=[(True, ('Si')), (False, ('No'))])      
     class Meta:
         model = Mating
@@ -25,7 +28,5 @@ class AddMatingForm(forms.ModelForm):
         
         exclude = ('is_active','farm',)
         
-        
-          
-            
+    
        
