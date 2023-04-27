@@ -10,10 +10,8 @@ from rabbit.models import Rabbit
 def add_buck(request):
     if request.method == 'POST':
         form = AddBuckForm(request.POST, request.FILES)
-      
         if form.is_valid():
             valid_producer = ProducerProfile.producers.get(id=request.user.id)
-            
             if valid_producer:
                 buck= form.save(commit=False)
                 buck.farm = valid_producer

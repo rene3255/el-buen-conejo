@@ -12,17 +12,12 @@ from datetime import date, timedelta
 def add_mating(request):
     if request.method == 'POST':
         form = AddMatingForm(request.POST, request.FILES, request=request)
-        print("Adding")
         if form.is_valid():
-            
             valid_producer = ProducerProfile.producers.get(id=request.user.id)
             if valid_producer:
                 mating = form.save(commit=False)   
-                print("DOE %s" % mating.doe)
                 valid_mating_date = ValidMatingDate(mating,request.user.id)
-                
                 if valid_mating_date.is_valid_mating():
-                    print("VALIDAD MATING ",  valid_mating_date.is_valid_mating())        
                     mating.farm =valid_producer
                     form.save()
                     return redirect('home')
@@ -43,11 +38,8 @@ def add_mating(request):
 @login_required(login_url='login')
 def matings_list(request):
     matings = Mating.objects.filter(farm=request.user.id, is_active=True)
-    print("HEMBRAS ", matings)
     if not matings:
-        print("Nothing")
         return redirect('home')
-    print("There are to many rabbits")  
     context = {"matings": matings}
     return render(request, 'Mating/MatingsList.html', context )
   
@@ -58,9 +50,8 @@ class ValidMatingDate:
         
         self.mating_form = mating_form
         self.user = user
-        
         self.fetch_mating = Mating.objects.filter(doe=self.mating_form.doe_id, mating_succeeded=True, farm=user, is_active=True).first()
-        print("FETCH MATE", self.fetch_mating)
+       
         
     @property
     def is_valid_entered_date(self):

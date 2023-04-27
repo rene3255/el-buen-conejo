@@ -40,7 +40,6 @@ def delete_cage(request,id):
     return redirect('cage-list')
   
 def cages_list(request):
-    print("user activo: %s" % request.user.id)
     rabbits_per_cage = \
         Cage.objects.filter(farm=request.user.id, is_active=True).\
             annotate(rabbit_count=Count('rabbit')).\
