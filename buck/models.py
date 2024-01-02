@@ -17,6 +17,6 @@ class Buck(models.Model):
           default_manager_name = "objects"
           
     def __str__(self) -> str:
-        return self.buck_name
+        return str(self.buck_name)
       
     objects = RecordManager()
