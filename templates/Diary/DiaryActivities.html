@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% include 'layouts/header.html' %}
+<main>
+  {% for activity in diary %}
+      <div>
+              {{ activity.activity_date }}
+              {{ activity.activity }}
+              {{ activity.costs }}
+
+              
+      </div>
+  {% endfor %}
+    <script src="{% static 'js/form/form_register.js' %}" type="module" ></script>  
+</main>
+{% include 'layouts/footer.html' %}
+{% endblock %}

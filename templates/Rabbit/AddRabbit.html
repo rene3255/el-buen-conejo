@@ -3,70 +3,61 @@
 {% block content %}
 {% include 'layouts/header.html' %}
 <main>
-   <form  class="form-login" method="post" enctype="multipart/form-data" novalidate>
+   <form  class="form-add-rabbit" method="post" enctype="multipart/form-data" novalidate>
       {% csrf_token %}
       <div>
-       <div class="form-login__header">
-         <h4>Inicia sesión en El buen conejo</h4>
-         <p>¿Aún no tienes cuenta? <a class="link__a" href="register">Regístrate ahora </a></p>
+       <div class="form-rabbit__header">
+         <h4>Registro de conejos</h4>
          {% if error != '' %}
-           <p>{{error}}</p>
+            {% if error.rabbit_tag %}
+                <p>Un conejo con ese arete o etiqueta ya se gistro antes</p>
+            {%endif %} 
+            {% if error.rabbit_photo %}
+                <p>Por favor ingrese una foto del rabbit</p>
+            {%endif %}    
+           
          {% endif %}
       </div>
 
-           <div class="form-register__first-name">
-         <label for="email_username">
+      <div class="form-rabbit__input">
+         <label for="rabbit_breed">
             <h6>Raza</h6>
          </label>
          {{ form.breed }}
       </div>
-      <div class="form-register__first-name">
-        <label for="email_username">
+      <div class="form-rabbit__input">
+        <label for="rabbit_sex">
            <h6>Sexo</h6>
         </label>
         {{ form.sex }}
       </div>
-      <div class="form-register__first-name">
-        <label for="email_username">
-          <h6>Etiqueta</h6>
+      <div class="form-rabbit__input">
+        <label for="rabbit_tag">
+          <h6>Etiqueta o Arete</h6>
         </label>
         {{ form.rabbit_tag }}
       </div>
-      <div class="form-register__first-name">
-        <label for="email_username">
+      <div class="form-rabbit__input">
+        <label for="birth_date">
           <h6>Fecha de nacimiento</h6>
         </label>
         {{ form.birth_date }}
       </div>
-
-      <div class="form-register__first-name">
-        <label for="email_username">
-          <h6>Peso (kg)</h6>
-        </label>
-        {{ form.weight }}
-      </div>
-      <div class="form-register__first-name">
-        <label for="email_username">
+      <div class="form-rabbit__input">
+        <label for="rabbit_photo">
           <h6>Agregar foto</h6>
         </label>
         {{ form.rabbit_photo }}
       </div>
-      <div class="form-register__first-name">
-        <label for="email_username">
+      <div class="form-rabbit__input">
+        <label for="rabbit_status">
           <h6>Estatus</h6>
         </label>
         {{ form.rabbit_status }}
       </div>
 
-      <div class="form-register__first-name">
-        <label for="email_username">
-          <h6>Observaciones</h6>
-        </label>
-        {{ form.observation }}
-      </div>
-
-      <div class="form-register__first-name">
-        <label for="email_username">
+      <div class="form-rabbit__input">
+        <label for="rabbit_cage">
           <h6>Jaulas</h6>
         </label>
         {{ form.cage }}

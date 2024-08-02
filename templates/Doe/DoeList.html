@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% include 'layouts/header.html' %}
+<main>
+
+  {% for doe in does %}
+      <div>
+         {{ doe.doe_name }}
+         {{ doe.doe_rabbit }}
+      </div>
+  {% endfor %}
+    <script src="{% static 'js/form/form_register.js' %}" type="module" ></script>  
+</main>
+{% include 'layouts/footer.html' %}
+{% endblock %}

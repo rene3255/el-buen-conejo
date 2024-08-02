@@ -7,7 +7,7 @@ import os
 from django.conf import settings
 from PIL import Image
 # Create your views here.
-@login_required
+@login_required(login_url='login')
 def update_producer_profile(request, id):
     producer_data = ProducerProfile.objects.get(id=id)
     if request.method == 'POST':

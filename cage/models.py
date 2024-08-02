@@ -36,13 +36,14 @@ class Cage(models.Model):
     )
     
     cage_title = models.CharField(max_length=50, unique=True)
-    batch_number = models.PositiveIntegerField(null=True, blank=True)
-    rabbits_number = models.PositiveIntegerField(default=0, null=True, blank=True)
     is_public = models.BooleanField(choices=CAGE_PUBLIC, 
                                  default=CAGE_PUBLIC[1][0])
     details = models.CharField(max_length=255,null=True, blank=True)
-    cage_photo =  models.ImageField('Producer profile',upload_to="media/",
+    cage_photo =  models.ImageField('Producer profile',upload_to="media/cage",
+                                    default="cage_avatar.png",
                                       null=True, blank=True)   
+                # upload_to="media/rabbits/", default="rabbit_avatar.png",
+                #                      null=True, blank=True)
     farm = models.ForeignKey(ProducerProfile, on_delete=models.CASCADE, related_name="cages")
     created_at = models.DateTimeField(auto_now_add=True)
     is_active = models.BooleanField(default=True)

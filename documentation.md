@@ -1,5 +1,4 @@
-Conejería
-
+El buen conejo
 
 Preliminary table list
 
@@ -120,17 +119,54 @@ Last week was really nutritive I learned about Model Managers and Validators. Al
 Into the period 21 to 28 feb the project advances consisted databases model rabbit.Some doubts arises from recursive fields between rabbits and mothers rabbits, same for bucks and rabbits.
 
 ## 03 Fri Mar
-Was a frustated day because my partner get off from the ship team. He said  
-that his scholar agenda was shriked. What a shame!
+Was a frustrated day because my partner get off from the ship team. He said  
+that his scholar agenda was shrinked. What a shame!
 
 Well, the last two days were full of learning. Let me explain, I hadn´t find how to resolve an error in the class AddRabbitForm. particularly the Cage field, its ModelChoiceField and each time I filter the cage by a producer or user authenticated it depicted all table content.
-At the end of the last two days the bug was fixed the knowledgement was super.
+At the end of the last two days the bug was fixed and the knowledgement was super.
 ## 05 Sun Mar
 Yesterday I solved through signals the issue of saving the rabbit entered into the cage field called "rabbits_number".
 So far, I'll be working in the feature to pass automatically the rabbit with status "Buck" or "Does".
+# 07 Tue Mar
+Running the Rabbit template I notice that the observations field is not required when it is created. So I decided to get of from de model.
+
+# 08 Wed Mar
+Was cumbersome day because I couldn't find the solution bad at end o the day I got the solution. I added two boolean fields to Rabbit model. Its function is to switch the status of the rabbit when is assigned as Doe.
+
+# 23 Thu Mar
+
+I got and error when I tried to run out a unnitest Mating module. Now, I'm going to clear all migrations and drop an create database.
+Eureka! I find the solution, the error was in the model rabbit concretly field Sex. It is an obligatory field, so I setting in the query sentences. 
+
+## 09 Sun Apr
+The mating model was successfully finished, although I believe is is important validate the mating date plus 45 days after mating. So, I'll do that functionality but first the test driven development.
+In detail, I must verify any duplicate field in relation with matting records. Let's see:
+  the field already exists:
+    if doe_name and buck_name exist and
+    if Mating date + 45 days > mating date entered then can be added to the database.
+     
 
 
 ## Scripts
 python3 manage.py runscript load_states
 TRUNCATE TABLE resources_state RESTART IDENTITY CASCADE;
 \COPY farms_producerprofile to 'produces.csv' csv header
+
+SELECT cage_title, count(*) FROM cage_cage INNER JOIN rabbit_rabbit ON cage_cage.id = rabbit_rabbit.cage_id group by cage_title;
+
+find . -path "*/migrations/*.py" -not -name "__init__.py" -delete
+
+{% for item in items %}
+    {% ifchanged %}
+        {% if forloop.first %}
+            <p>This is the first item in the list!</p>
+        {% else %}
+            <p>This is a new item in the list!</p>
+        {% endif %}
+    {% endifchanged %}
+    <p>{{ item.name }}</p>
+{% endfor %}
+
+Fri 2 Aug 2024
+
+I reconfigure the settings structure to revert it back to the original state. Just because the Digital Ocean VM permit seamlessly configuration.

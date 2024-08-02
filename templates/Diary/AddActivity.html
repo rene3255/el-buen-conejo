@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% include 'layouts/header.html' %}
+<main>
+    
+   <form  class="form-add-rabbit" method="post" enctype="multipart/form-data" novalidate>
+      {% csrf_token %}
+      <div>
+       <div class="form-rabbit__header">
+         <h4>Diario del catequista</h4>
+         {% if error != '' %}
+           <p>{{error}}</p>
+         {% endif %}
+      </div>
+      
+      <div>
+        {% if last_activity %}
+          <table>
+            {% for activity in last_activity %}
+              {% if forloop.first %}
+                <thead>
+                  <tr>
+                    <th>Fecha</th>
+                    <th>Actividad</th>
+                    <th>Tipo</th>
+                    <th>Gasto</th>
+                    <th>Ingreso</th>
+                    <th>No. Factura | Nota | Ticket</th>
+                    <th>Balance</th>
+                  </tr>
+                </thead> 
+                <tbody>     
+                  <tr>
+                    <td>
+                      {{ activity.activity_date }}
+                    </td> 
+                    <td>
+                      {{ activity.activity }}
+                    </td> 
+                    <td>
+                        {{ activity.transaction_type }}
+                    </td> 
+                    <td>
+                      {{ activity.debit }}
+                    </td>  
+                    <td>
+                        {{ activity.credit }}
+                    </td>
+                    <td>
+                        {{ activity.reference }}
+                    </td>
+                    <td>
+                        {{ activity.balance }}
+                    </td>
+                  </tr>  
+                </tbody>    
+              {% else %}
+                <tbody>     
+                  <tr>
+                    <td>
+                      {{ activity.activity_date }}
+                    </td> 
+                    <td>
+                      {{ activity.activity }}
+                    </td>  
+                    <td>
+                        {{ activity.transaction_type }}
+                    </td>
+                    <td>
+                      {{ activity.debit }}
+                    </td>  
+                    <td>
+                        {{ activity.credit }}
+                    </td>
+                    <td>
+                        {{ activity.reference }}
+                    </td>
+                    <td>
+                        {{ activity.balance }}
+                    </td>
+                  </tr>  
+                </tbody>    
+              {% endif %}   
+            {% endfor %}  
+          </table>
+        {% endif %}  
+
+        
+
+      </div>
+      <div class="form-rabbit__input">
+         <label for="activity_date">
+            <h6>Fecha</h6>
+         </label>
+         {{ form.activity_date }}
+      </div>
+      <div class="form-rabbit__input">
+        <label for="activity">
+           <h6>Descripción de la actividad</h6>
+        </label>
+        {{ form.activity }}
+      </div>
+
+      <div class="form-rabbit__input">
+        <label for="transaction_type">
+           <h6>Tipo de transacción</h6>
+        </label>
+        {{ form.transaction_type }}
+      </div>
+
+      <div class="form-rabbit__input">
+        <label for="debit">
+          <h6>Importe de gastos</h6>
+        </label>
+        {{ form.debit }}
+      </div>
+      <div class="form-rabbit__input">
+        <label for="credit">
+          <h6>Importe de ingresos generados</h6>
+        </label>
+        {{ form.credit }}
+      </div>
+      <div class="form-rabbit__input">
+        <label for="reference">
+          <h6>Ticket | No. Nota | Factura </h6>
+        </label>
+        {{ form.reference }}
+      </div>
+      <input type="submit">
+    </div>
+    
+    </form>
+
+    
+  
+    
+</main>
+<script src="{% static 'js/diary/diary.js' %}" type="module"></script>     
+<script src="{% static 'js/form/form_login.js' %}" type="module"></script>   
+
+{% include 'layouts/footer.html' %}
+{% endblock %}
