@@ -166,3 +166,7 @@ find . -path "*/migrations/*.py" -not -name "__init__.py" -delete
     {% endifchanged %}
     <p>{{ item.name }}</p>
 {% endfor %}
+
+Fri 2 Aug 2024
+
+I reconfigure the settings structure to revert it back to the original state. Just because the Digital Ocean VM permit seamlessly configuration.
