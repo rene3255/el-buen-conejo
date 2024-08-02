@@ -3,12 +3,12 @@
 {% block content %}
 {% include 'layouts/header.html' %}
 <main>
-
+    
    <form  class="form-add-rabbit" method="post" enctype="multipart/form-data" novalidate>
       {% csrf_token %}
       <div>
        <div class="form-rabbit__header">
-         <h4>Diario del productor</h4>
+         <h4>Diario del catequista</h4>
          {% if error != '' %}
            <p>{{error}}</p>
          {% endif %}
@@ -23,7 +23,11 @@
                   <tr>
                     <th>Fecha</th>
                     <th>Actividad</th>
-                    <th>Costo</th>
+                    <th>Tipo</th>
+                    <th>Gasto</th>
+                    <th>Ingreso</th>
+                    <th>No. Factura | Nota | Ticket</th>
+                    <th>Balance</th>
                   </tr>
                 </thead> 
                 <tbody>     
@@ -33,11 +37,22 @@
                     </td> 
                     <td>
                       {{ activity.activity }}
+                    </td> 
+                    <td>
+                        {{ activity.transaction_type }}
+                    </td> 
+                    <td>
+                      {{ activity.debit }}
                     </td>  
                     <td>
-                      {{ activity.costs }}
-                    </td>  
-                    
+                        {{ activity.credit }}
+                    </td>
+                    <td>
+                        {{ activity.reference }}
+                    </td>
+                    <td>
+                        {{ activity.balance }}
+                    </td>
                   </tr>  
                 </tbody>    
               {% else %}
@@ -50,9 +65,20 @@
                       {{ activity.activity }}
                     </td>  
                     <td>
-                      {{ activity.costs }}
+                        {{ activity.transaction_type }}
+                    </td>
+                    <td>
+                      {{ activity.debit }}
                     </td>  
-
+                    <td>
+                        {{ activity.credit }}
+                    </td>
+                    <td>
+                        {{ activity.reference }}
+                    </td>
+                    <td>
+                        {{ activity.balance }}
+                    </td>
                   </tr>  
                 </tbody>    
               {% endif %}   
@@ -75,11 +101,31 @@
         </label>
         {{ form.activity }}
       </div>
+
       <div class="form-rabbit__input">
-        <label for="costs">
-          <h6>Costos</h6>
+        <label for="transaction_type">
+           <h6>Tipo de transacción</h6>
         </label>
-        {{ form.costs }}
+        {{ form.transaction_type }}
+      </div>
+
+      <div class="form-rabbit__input">
+        <label for="debit">
+          <h6>Importe de gastos</h6>
+        </label>
+        {{ form.debit }}
+      </div>
+      <div class="form-rabbit__input">
+        <label for="credit">
+          <h6>Importe de ingresos generados</h6>
+        </label>
+        {{ form.credit }}
+      </div>
+      <div class="form-rabbit__input">
+        <label for="reference">
+          <h6>Ticket | No. Nota | Factura </h6>
+        </label>
+        {{ form.reference }}
       </div>
       <input type="submit">
     </div>
@@ -90,6 +136,8 @@
   
     
 </main>
-<script src="{% static 'js/form/form_login.js' %}" type="module"></script>    
+<script src="{% static 'js/diary/diary.js' %}" type="module"></script>     
+<script src="{% static 'js/form/form_login.js' %}" type="module"></script>   
+
 {% include 'layouts/footer.html' %}
 {% endblock %}
