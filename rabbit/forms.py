@@ -7,40 +7,37 @@ from django.core.exceptions import ValidationError
 
 
 class AddRabbitForm(forms.ModelForm):
-      
+
     def __init__(self, *args, **kwargs):
-        self.user = kwargs.pop('user', None)
-        request = kwargs.pop('request', None)
+        self.user = kwargs.pop("user", None)
+        request = kwargs.pop("request", None)
         super().__init__(*args, **kwargs)
         if request:
-            self.fields['cage'].queryset = Cage.cages.cages_by_farm(request.user.id).all()
-            
+            self.fields["cage"].queryset = Cage.cages.cages_by_farm(
+                request.user.id
+            ).all()
+
     breed = forms.ModelChoiceField(queryset=Breed.objects.all())
-    sex = forms.ChoiceField(label="Sexo", 
-                        choices=[('M', ('Macho')), 
-                                 ('H', ('Hembra'))])    
-    #rabbit_tag = forms.CharField(max_length=30,initial="ebc-")
+    sex = forms.ChoiceField(label="Sexo", choices=[("M", ("Macho")), ("H", ("Hembra"))])
+    # rabbit_tag = forms.CharField(max_length=30,initial="ebc-")
     birth_date = forms.DateField(required=False)
     rabbit_photo = forms.ImageField(required=False)
-    rabbit_status = forms.ModelChoiceField(
-                            queryset=RabbitStatus.objects.all()
-                            )
-    
+    rabbit_status = forms.ModelChoiceField(queryset=RabbitStatus.objects.all())
+
     class Meta:
         model = Rabbit
-        fields = ['breed', 'sex',
-                  'birth_date',  
-                  'rabbit_photo', 'rabbit_status',
-                  'cage','farm',
-                 ]
-        exclude = ('is_active','is_doe','is_buck','farm',)
-        
-        
-    
-            
-       
-        
-        
-        
-        
-        
+        fields = [
+            "breed",
+            "sex",
+            "birth_date",
+            "rabbit_photo",
+            "rabbit_status",
+            "cage",
+            "farm",
+        ]
+        exclude = (
+            "is_active",
+            "is_doe",
+            "is_buck",
+            "farm",
+        )
