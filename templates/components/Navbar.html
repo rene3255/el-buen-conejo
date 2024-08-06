@@ -4,7 +4,7 @@
         <div class="menu-mobile">
             <div class="menu-mobile__icon"></div>
         </div>
-        <a href="home" class="link__a-without-css">
+        <a href="{% url 'home' %}" class="link__a-without-css">
            <div class="full-logo"></div>
         </a>   
     </div>
@@ -13,7 +13,7 @@
         <div class="menu-mobile">
             <div class="menu-mobile__icon"></div>
         </div>
-        <a href="homepage" class="link__a-without-css">
+        <a href="{% url 'homepage' %}" class="link__a-without-css">
            <div class="logo"></div>
         </a>  
     </div>
@@ -41,13 +41,13 @@
          <div class="menu-user">
              <ul>
                  <li>
-                    <a href="myprofile" class="link__a-without-css">
+                    <a href="{% url 'myprofile' %}" class="link__a-without-css">
                         Mi perfil
                     </a>  
                  </li>
                  <li>
-                    <a href="logout" class="link__a-without-css">
-                        <span class="text-danger">Cerrar sesión</span>
+                    <a href="{% url 'logout' %}" class="link__a-without-css">
+                        <span class="text-danger">Cerrar Sesión</span>
                     </a>  
                 </li>
              </ul>
