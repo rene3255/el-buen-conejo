@@ -9,24 +9,30 @@ from diary.models import Diary
 @login_required(login_url="login")
 def add_activity(request):
     context = {}
-    last_activity_entered = {"activity": None}
     if request.method == "POST":
         form = AddActivityForm(request.POST, request.FILES)
         if form.is_valid():
             diary = form.save(commit=False)
-            valid_producer = ProducerProfile.producers.get(id=request.user.id)
-            if valid_producer:
-                context = {"my_activity": diary.activity}
-                print("LAST ACT:", diary.activity)
-                diary.farm_id = valid_producer.id
-                if diary.balance is None:
-                    diary.balance = "0.00"
-                diary.is_active = True
-                url = reverse("add-activity") + "?my_activity={}".format(
-                    context["my_activity"]
+            try:
+                valid_producer = ProducerProfile.producers.get(id=request.user.id)
+                if valid_producer:
+                    context = {"my_activity": diary.activity}
+                    print("LAST ACT:", diary.activity)
+                    diary.farm_id = valid_producer.id
+                    if diary.balance is None:
+                        diary.balance = "0.00"
+                    diary.is_active = True
+                    url = reverse("add-activity") + "?my_activity={}".format(
+                        context["my_activity"]
+                    )
+                    form.save()
+                    return redirect(url)
+            except ProducerProfile.DoesNotExist:
+                return render(
+                    request,
+                    "Diary/AddActivity.html",
+                    {"form": form, "error": "No eres productor"},
                 )
-                form.save()
-                return redirect(url)
 
     else:
         form = AddActivityForm()
