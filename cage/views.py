@@ -17,14 +17,10 @@ def add_cage(request):
             cage = form.save(commit=False)
             print("ID ACTIVO: ", request.user.id)
             try:
-                valid_user = ProducerProfile.objects.get(
-                    id=request.user.id, is_producer=True
-                )
-
+                valid_user = ProducerProfile.producers.get(id=request.user.id)
                 if valid_user:
                     cage.farm = valid_user
                     cage.save()
-
                 if cage:
                     return redirect("add-rabbit")
             except ProducerProfile.DoesNotExist:
